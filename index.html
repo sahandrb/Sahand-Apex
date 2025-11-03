@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahand Apex</title>
+
+  <!-- فونت‌ها -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 🌈 سیستم رنگ و طراحی - مطابق فایل اصلی React/Tailwind */
+    :root {
+      --background: hsl(0, 0%, 96%);
+      --foreground: hsl(210, 100%, 20%);
+      --card: hsl(0, 0%, 100%);
+      --accent: hsl(27, 79%, 52%);
+      --accent-hover: hsl(27, 79%, 58%);
+      --accent-foreground: hsl(0, 0%, 98%);
+      --primary: hsl(210, 100%, 20%);
+      --primary-hover: hsl(210, 100%, 25%);
+      --primary-foreground: hsl(0, 0%, 98%);
+      --muted: hsl(0, 0%, 93%);
+      --border: hsl(0, 0%, 89%);
+      --radius: 0.75rem;
+      --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', 'IBM Plex Sans', sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* ناوبری */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: var(--transition-smooth);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--foreground);
+      margin: 0 1rem;
+      font-weight: 500;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition-smooth);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    /* برای حالت موبایل */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+      }
+      .nav-links.active {
+        display: flex;
+        background: rgba(255,255,255,0.98);
+        padding: 1rem;
+        border-top: 1px solid var(--border);
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    /* 🌀 انیمیشن‌های عمومی */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* محل بارگذاری بخش‌ها */
+    main {
+      margin-top: 80px;
+    }
+
+    section {
+      min-height: 60vh;
+      padding: 4rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🚀 ناوبری -->
+  <nav>
+    <div class="nav-logo">Sahand Apex</div>
+    <div class="menu-toggle">☰</div>
+    <div class="nav-links">
+      <a href="#hero">خانه</a>
+      <a href="#introduction">معرفی</a>
+      <a href="#story">داستان</a>
+      <a href="#office">ملزومات اداری</a>
+      <a href="#petshop">پت‌شاپ</a>
+      <a href="#philosophy">فلسفه کاری</a>
+      <a href="#bio">درباره</a>
+    </div>
+  </nav>
+
+  <!-- 📦 محل Inject هر بخش -->
+  <main>
+    <div id="hero"></div>
+    <div id="introduction"></div>
+    <div id="story"></div>
+    <div id="office"></div>
+    <div id="petshop"></div>
+    <div id="philosophy"></div>
+    <div id="bio"></div>
+    <div id="footer"></div>
+  </main>
+
+  <!-- ⚙️ اسکریپت اصلی برای لود کردن هر بخش -->
+  <script>
+    // منوی موبایل
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // تابع بارگذاری سکشن‌ها
+    async function loadSection(id, path) {
+      const container = document.getElementById(id);
+      try {
+        const response = await fetch(path);
+        const html = await response.text();
+        container.innerHTML = html;
+      } catch (err) {
+        container.innerHTML = "<p style='color:red;text-align:center;'>خطا در بارگذاری بخش " + id + "</p>";
+      }
+    }
+
+    // لود بخش‌ها
+    loadSection('hero', 'sections/hero.html');
+    loadSection('introduction', 'sections/introduction.html');
+    loadSection('story', 'sections/story.html');
+    loadSection('office', 'sections/office.html');
+    loadSection('petshop', 'sections/petshop.html');
+    loadSection('philosophy', 'sections/philosophy.html');
+    loadSection('bio', 'sections/bio.html');
+    loadSection('footer', 'sections/footer.html');
+  </script>
+</body>
+</html>
