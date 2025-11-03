@@ -1,4 +1,4 @@
-<!-- story.html - نسخه جدید و جذاب -->
+<!-- story.html - نسخه جادویی و بهینه -->
 <section id="story" style="position:relative; background:hsl(0,0%,96%); font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(210,100%,20%); overflow:hidden; padding:6rem 1rem;">
 
   <!-- پس‌زمینه نرم و نورهای تزئینی -->
@@ -15,108 +15,111 @@
 
     <!-- توضیح اصلی -->
     <div class="glass-card story-main fadeIn" style="margin-bottom:4rem;">
-      <p style="font-size:1.15rem; line-height:1.8; text-align:justify;">
+      <p style="font-size:1.1rem; line-height:1.7; text-align:justify;">
         سهند رنجبری‌پور پس از مشاهده نیاز بازار به محصولات با کیفیت و دسترس‌پذیر، فعالیت خود را در زمینه تأمین ملزومات اداری و محصولات پت‌شاپ آغاز کرد. تجربه تولید داخلی و واردات مستقیم، پایه‌ای برای ارائه خدمات حرفه‌ای و قابل اعتماد شد.
       </p>
     </div>
 
-    <!-- مراحل موفقیت به صورت کارت افقی -->
-    <div class="milestones-container" style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem;">
+    <!-- کارت‌های milestones جادویی -->
+    <div class="milestones-container">
 
       <div class="milestone-card fadeIn" style="--delay:0.1s;">
-        <div class="icon-circle">💡</div>
+        <div class="icon-circle">
+          <span style="font-size:2rem;">🌟</span>
+        </div>
         <h3>شروع</h3>
-        <p>شناسایی نیاز بازار به محصولات با کیفیت</p>
+        <p>شناسایی نیاز بازار به محصولات با کیفیت و دسترس‌پذیر</p>
       </div>
 
       <div class="milestone-card fadeIn" style="--delay:0.3s;">
-        <div class="icon-circle">📈</div>
+        <div class="icon-circle">
+          <span style="font-size:2rem;">🚀</span>
+        </div>
         <h3>رشد</h3>
-        <p>توسعه فعالیت در ملزومات اداری و پت‌شاپ</p>
+        <p>توسعه فعالیت در ملزومات اداری و پت‌شاپ با کیفیت عالی</p>
       </div>
 
       <div class="milestone-card fadeIn" style="--delay:0.5s;">
-        <div class="icon-circle">🏆</div>
+        <div class="icon-circle">
+          <span style="font-size:2rem;">🏆</span>
+        </div>
         <h3>موفقیت</h3>
-        <p>ارائه خدمات حرفه‌ای و قابل اعتماد</p>
+        <p>ارائه خدمات حرفه‌ای و قابل اعتماد با برند معتبر</p>
       </div>
 
     </div>
-
   </div>
 
-  <!-- CSS مخصوص Story جدید -->
+  <!-- CSS -->
   <style>
     @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
     @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
 
-    .fadeIn {
-      animation:fadeIn 1s ease-out forwards;
-      opacity:0;
-    }
+    .fadeIn { animation:fadeIn 1s ease-out forwards; opacity:0; }
 
     .glass-card {
       background:rgba(255,255,255,0.85);
       backdrop-filter:blur(15px);
       border-radius:1rem;
-      padding:2rem;
+      padding:1.5rem 1.5rem;
       box-shadow:0 10px 25px rgba(0,0,0,0.08);
       transition:0.3s all;
     }
     .glass-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(0,0,0,0.15); }
 
     .milestones-container {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:2rem;
       margin-top:2rem;
     }
 
     .milestone-card {
-      background:rgba(255,255,255,0.8);
-      backdrop-filter:blur(15px);
+      background:linear-gradient(135deg, hsl(27,79%,52%), hsl(27,79%,60%));
+      color:hsl(0,0%,98%);
       border-radius:1rem;
-      padding:2rem 1.5rem;
+      padding:1.8rem 1.5rem;
       width:250px;
       text-align:center;
-      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
       transition:0.3s all;
       opacity:0;
       transform:translateY(30px);
     }
-    .milestone-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(230,126,34,0.2); }
+    .milestone-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 15px 35px rgba(230,126,34,0.25);
+      background:linear-gradient(135deg, hsl(27,79%,58%), hsl(27,79%,65%));
+    }
 
     .icon-circle {
       width:70px;
       height:70px;
       margin:0 auto 1rem auto;
       border-radius:50%;
-      background:linear-gradient(135deg, hsl(27,79%,52%), hsl(27,79%,62%));
+      background:linear-gradient(135deg, hsl(210,100%,20%), hsl(27,79%,52%));
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:2rem;
-      color:white;
       box-shadow:0 0 20px rgba(230,126,34,0.3);
       animation:float 5s ease-in-out infinite;
     }
 
-    .milestone-card h3 {
-      font-size:1.25rem;
-      font-weight:700;
-      margin-bottom:0.5rem;
-    }
-
-    .milestone-card p {
-      font-size:1rem;
-      color:hsl(210,30%,40%);
-      line-height:1.6;
-    }
+    .milestone-card h3 { font-size:1.2rem; font-weight:700; margin-bottom:0.5rem; color:hsl(0,0%,98%);}
+    .milestone-card p { font-size:0.95rem; line-height:1.6; color:hsl(0,0%,98%); }
 
     @media(max-width:768px){
       .milestones-container { flex-direction:column; gap:1.5rem; }
       .milestone-card { width:100%; text-align:right; }
+      .glass-card { padding:1rem 1rem; }
+      .milestone-card h3 { font-size:1.1rem; }
+      .milestone-card p { font-size:0.9rem; }
+      .icon-circle { width:60px; height:60px; }
     }
   </style>
 
-  <!-- JS مخصوص Story جدید -->
+  <!-- JS -->
   <script>
     const milestones = document.querySelectorAll('#story .milestone-card');
     const observer = new IntersectionObserver((entries)=>{
