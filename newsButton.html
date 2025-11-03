@@ -1,27 +1,58 @@
 <!-- news-button.html -->
-<div style="text-align:center; margin:3rem 0;">
+<div class="news-button-section">
+  <p class="button-info">
+    اینجا می‌توانید مقالات ما را بخوانید و با محصولات تامین‌شده در ایران آشنا شوید
+  </p>
   <a href="news.html" target="_self">
-    <button class="btn-primary">
+    <button class="btn-primary-3d">
       مشاهده اخبار و مقالات
     </button>
   </a>
 </div>
 
-<!-- CSS دکمه -->
+<!-- CSS حرفه‌ای دکمه -->
 <style>
-.btn-primary {
-  background:hsl(27,79%,52%);
-  color:hsl(0,0%,98%);
-  padding:0.75rem 1.5rem;
-  border-radius:0.75rem;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s all;
+.news-button-section {
+  text-align:center;
+  margin:4rem 0;
 }
-.btn-primary:hover {
-  background:hsl(27,79%,58%);
-  transform:translateY(-3px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+
+.button-info {
+  font-size:1.1rem;
+  color:hsl(210,30%,40%);
+  margin-bottom:1.5rem;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.btn-primary-3d {
+  background: linear-gradient(145deg, hsl(27,79%,52%), hsl(27,79%,45%));
+  color:hsl(0,0%,98%);
+  padding:1rem 2rem;
+  font-size:1.15rem;
+  font-weight:700;
+  border:none;
+  border-radius:1rem;
+  cursor:pointer;
+  box-shadow: 0 6px 0 hsl(27,79%,38%), 0 10px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  position:relative;
+}
+
+.btn-primary-3d:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 0 hsl(27,79%,38%), 0 15px 25px rgba(0,0,0,0.2);
+  background: linear-gradient(145deg, hsl(27,79%,58%), hsl(27,79%,50%));
+}
+
+.btn-primary-3d:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 hsl(27,79%,38%), 0 6px 10px rgba(0,0,0,0.15);
+}
+
+@media(max-width:768px){
+  .btn-primary-3d { width:80%; font-size:1rem; padding:0.9rem 1.5rem; }
+  .button-info { font-size:1rem; }
 }
 </style>
