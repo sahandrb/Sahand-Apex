@@ -1,0 +1,127 @@
+<!-- footer.html -->
+<footer id="footer" style="position:relative; background:linear-gradient(180deg, hsl(210,100%,22%) 0%, hsl(210,100%,18%) 100%); color:hsl(0,0%,98%); font-family:'Vazirmatn','IBM Plex Sans',sans-serif; overflow:hidden;">
+
+  <!-- نور تزئینی -->
+  <div style="position:absolute; top:-100px; right:-80px; width:350px; height:350px; background:rgba(230,126,34,0.12); border-radius:50%; filter:blur(120px); animation:float 7s ease-in-out infinite;"></div>
+  <div style="position:absolute; bottom:-120px; left:-60px; width:400px; height:400px; background:rgba(230,126,34,0.08); border-radius:50%; filter:blur(150px); animation:float 6s ease-in-out infinite 1s;"></div>
+
+  <div class="container" style="position:relative; z-index:2; max-width:1200px; margin:auto; padding:4rem 1rem 2rem 1rem; text-align:center;">
+    
+    <!-- لوگو و توضیح -->
+    <div style="margin-bottom:2rem; animation:fadeIn 1s ease-out forwards;">
+      <h2 style="font-size:1.8rem; font-weight:700; margin-bottom:0.5rem;">Sahand Apex</h2>
+      <p style="color:rgba(255,255,255,0.8); font-size:1rem;">تأمین، تولید و واردات B2B برای کسب‌وکارها</p>
+    </div>
+
+    <!-- لینک‌های سریع -->
+    <div class="footer-links fadeIn" style="animation-delay:0.2s;">
+      <a href="#hero">خانه</a>
+      <a href="#introduction">معرفی</a>
+      <a href="#story">داستان</a>
+      <a href="#office">اداری</a>
+      <a href="#petshop">پت‌شاپ</a>
+      <a href="#philosophy">فلسفه</a>
+      <a href="#bio">درباره</a>
+    </div>
+
+    <!-- شبکه‌های اجتماعی -->
+    <div class="social-icons fadeIn" style="animation-delay:0.4s;">
+      <a href="https://instagram.com" target="_blank" title="Instagram">📸</a>
+      <a href="https://linkedin.com" target="_blank" title="LinkedIn">🔗</a>
+      <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+    </div>
+
+    <!-- خط جداکننده -->
+    <div style="height:1px; background:rgba(255,255,255,0.2); margin:2rem auto; max-width:600px;"></div>
+
+    <!-- کپی‌رایت -->
+    <p class="fadeIn" style="color:rgba(255,255,255,0.7); font-size:0.95rem; animation-delay:0.6s;">
+      © <span id="year"></span> Sahand Apex — طراحی و توسعه با عشق 💛
+    </p>
+
+  </div>
+
+  <!-- 🎨 CSS مخصوص Footer -->
+  <style>
+    @keyframes float {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-8px);}
+    }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+
+    .footer-links {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:1.2rem;
+      margin-bottom:1.5rem;
+    }
+
+    .footer-links a {
+      color:rgba(255,255,255,0.85);
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    .footer-links a::after {
+      content:'';
+      position:absolute;
+      bottom:-3px;
+      left:0;
+      width:0%;
+      height:2px;
+      background:hsl(27,79%,52%);
+      transition:width 0.3s;
+    }
+
+    .footer-links a:hover::after { width:100%; }
+    .footer-links a:hover { color:hsl(27,79%,60%); }
+
+    .social-icons {
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      font-size:1.5rem;
+      margin-bottom:1.5rem;
+    }
+
+    .social-icons a {
+      color:hsl(27,79%,52%);
+      background:rgba(255,255,255,0.1);
+      padding:0.6rem;
+      border-radius:50%;
+      backdrop-filter:blur(10px);
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(230,126,34,0.15);
+    }
+
+    .social-icons a:hover {
+      transform:translateY(-4px) scale(1.1);
+      background:rgba(230,126,34,0.2);
+      box-shadow:0 8px 25px rgba(230,126,34,0.25);
+    }
+
+    @media(max-width:768px){
+      .footer-links { gap:0.8rem; font-size:0.9rem; }
+      .social-icons { font-size:1.3rem; }
+    }
+  </style>
+
+  <!-- ⚙️ JS مخصوص Footer -->
+  <script>
+    // سال فعلی برای کپی‌رایت
+    document.querySelector('#footer #year').textContent = new Date().getFullYear();
+
+    // fade-in animation هنگام لود
+    const fadeElements = document.querySelectorAll('#footer .fadeIn');
+    fadeElements.forEach((el, i)=>{
+      setTimeout(()=>{
+        el.style.opacity = '1';
+        el.style.animation = 'fadeIn 1s ease-out forwards';
+      }, i * 300);
+    });
+  </script>
+
+</footer>
