@@ -1,147 +1,114 @@
 <!-- petshop.html -->
-<section id="petshop" style="position:relative; min-height:80vh; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(210,100%,20%); background:linear-gradient(180deg, hsl(27,79%,98%) 0%, hsl(27,79%,96%) 100%); overflow:hidden; padding:6rem 1rem;">
+<section id="petshop" style="position:relative; min-height:80vh; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(210,100%,20%); background:linear-gradient(180deg, hsl(0,0%,98%) 0%, hsl(0,0%,96%) 100%); overflow:hidden; padding:6rem 1rem;">
 
-  <!-- پس‌زمینه دکوری -->
-  <div style="position:absolute; top:-80px; right:-50px; width:350px; height:350px; background:rgba(230,126,34,0.08); border-radius:50%; filter:blur(100px); animation:float 8s ease-in-out infinite;"></div>
-  <div style="position:absolute; bottom:-120px; left:-50px; width:400px; height:400px; background:rgba(230,126,34,0.06); border-radius:50%; filter:blur(150px); animation:float 6s ease-in-out infinite 1s;"></div>
+  <!-- پس‌زمینه تزئینی -->
+  <div style="position:absolute; top:-100px; right:-50px; width:350px; height:350px; background:rgba(27,79,52,0.08); border-radius:50%; filter:blur(120px); animation:float 8s ease-in-out infinite;"></div>
+  <div style="position:absolute; bottom:-120px; left:-60px; width:400px; height:400px; background:rgba(230,126,34,0.06); border-radius:50%; filter:blur(150px); animation:float 7s ease-in-out infinite 1s;"></div>
 
   <div class="container" style="position:relative; z-index:2; max-width:1200px; margin:auto;">
 
     <!-- عنوان بخش -->
     <div style="text-align:center; margin-bottom:4rem; animation:fadeIn 1s ease-out forwards;">
-      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem; color:hsl(210,100%,20%);">پت‌شاپ و محصولات حیوانات خانگی</h2>
-      <p style="font-size:1.1rem; color:hsl(210,30%,40%); margin-bottom:0.75rem;">تغذیه، بهداشت و لوازم سرگرمی</p>
-      <div style="width:90px; height:4px; background:hsl(27,79%,52%); margin:0 auto; border-radius:1rem;"></div>
+      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem; color:hsl(210,100%,20%);">محصولات پت‌شاپ</h2>
+      <p style="font-size:1.1rem; color:hsl(210,30%,40%); margin-bottom:0.75rem;">تغذیه، مراقبت و سرگرمی حیوانات خانگی</p>
+      <div style="width:80px; height:4px; background:hsl(27,79%,52%); margin:0 auto; border-radius:1rem;"></div>
     </div>
 
-    <!-- محتوای بخش: کارت‌های محصولات -->
-    <div class="petshop-grid">
-      
-      <!-- کارت غذا -->
-      <div class="pet-card fadeIn" style="--delay:0.1s;">
-        <div class="icon">🍖</div>
-        <h3>غذای حیوانات</h3>
-        <p>انواع خوراک باکیفیت برای گربه و سگ از برندهای معتبر جهانی.</p>
+    <!-- کارت محتوا با تصویر و متن -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:3rem; align-items:center;">
+
+      <!-- تصویر بخش پت‌شاپ با افکت گرادینت -->
+      <div style="position:relative; min-height:300px; border-radius:1rem; overflow:hidden; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, hsl(27,79%,52%), hsl(27,79%,60%));">
+        <div style="position:absolute; inset:0; opacity:0.1; border-radius:1rem; background:radial-gradient(circle, rgba(230,126,34,0.4) 0%, transparent 70%);"></div>
+        <div style="position:relative; z-index:1; color:hsl(0,0%,98%); text-align:center;">
+          <div style="font-size:4rem; margin-bottom:1rem;">🐶</div>
+          <h3 style="font-size:1.75rem; font-weight:700; margin-bottom:0.5rem;">محصولات حیوانات خانگی</h3>
+          <p style="color:rgba(255,255,255,0.8);">تغذیه، بهداشت و سرگرمی حیوانات</p>
+        </div>
       </div>
 
-      <!-- کارت لوازم -->
-      <div class="pet-card fadeIn" style="--delay:0.3s;">
-        <div class="icon">🦴</div>
-        <h3>لوازم و اسباب‌بازی</h3>
-        <p>محصولات سرگرمی و مراقبت برای حیوانات خانگی، با تنوع بالا.</p>
+      <!-- متن و ویژگی‌ها -->
+      <div class="glass-card fadeIn" style="animation-delay:0.3s;">
+        <p style="font-size:1.15rem; line-height:1.8; margin-bottom:2rem;">
+          گروه Sahand Apex امکان ارائه محصولات <strong style="color:hsl(27,79%,52%);">حیوانات خانگی</strong> را برای فروشگاه‌ها و پت‌شاپ‌ها فراهم می‌کند. تمرکز بر کیفیت و تنوع محصولات حیوانات خانگی است.
+        </p>
+
+        <!-- لیست ویژگی‌ها -->
+        <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
+          <div class="feature"><span style="color:hsl(27,79%,52%);">✅</span> تغذیه و خوراک سالم</div>
+          <div class="feature"><span style="color:hsl(27,79%,52%);">✅</span> لوازم بهداشتی و مراقبت</div>
+          <div class="feature"><span style="color:hsl(27,79%,52%);">✅</span> اسباب‌بازی و سرگرمی</div>
+        </div>
+
+        <!-- CTA Button -->
+        <button class="btn-primary" onclick="window.open('https://example.com/petshop','_blank')">
+          اطلاعات و همکاری
+        </button>
       </div>
 
-      <!-- کارت بهداشت -->
-      <div class="pet-card fadeIn" style="--delay:0.5s;">
-        <div class="icon">🧴</div>
-        <h3>محصولات بهداشتی</h3>
-        <p>شامپوها، برس‌ها و محصولات تخصصی مراقبت از پوست و مو.</p>
-      </div>
-
-      <!-- کارت خدمات -->
-      <div class="pet-card fadeIn" style="--delay:0.7s;">
-        <div class="icon">🐕</div>
-        <h3>خدمات تأمین عمده</h3>
-        <p>برای فروشگاه‌های پت‌شاپ و مراکز دام‌پزشکی، با بسته‌بندی اختصاصی.</p>
-      </div>
-    </div>
-
-    <!-- CTA نهایی -->
-    <div style="text-align:center; margin-top:4rem;">
-      <button class="btn-primary" onclick="window.open('https://example.com/petshop','_blank')">
-        مشاهده و همکاری
-      </button>
     </div>
   </div>
 
-  <!-- 🎨 CSS مخصوص Petshop -->
+  <!-- CSS مخصوص PetShop مشابه Office -->
   <style>
     @keyframes float {
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(-10px);}
+      0%,100%{ transform:translateY(0px);}
+      50%{ transform:translateY(-12px);}
     }
-    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
 
-    .petshop-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:2rem;
-    }
-
-    .pet-card {
-      background:rgba(255,255,255,0.8);
+    .glass-card {
+      background:rgba(255,255,255,0.75);
       backdrop-filter:blur(20px);
       border-radius:1rem;
-      padding:2rem 1.5rem;
-      text-align:center;
-      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+      padding:2rem;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
       transition:0.3s all;
-      opacity:0;
-      transform:translateY(30px);
     }
+    .glass-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(0,0,0,0.15); }
 
-    .pet-card:hover {
-      transform:translateY(-8px);
-      box-shadow:0 15px 30px rgba(230,126,34,0.2);
+    .feature {
+      background:rgba(255,255,255,0.2);
+      padding:0.5rem 1rem;
+      border-radius:0.75rem;
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+      font-weight:500;
+      transition:0.3s;
     }
-
-    .pet-card .icon {
-      font-size:2.5rem;
-      margin-bottom:1rem;
-      color:hsl(27,79%,52%);
-      filter:drop-shadow(0 3px 5px rgba(230,126,34,0.3));
-      animation:float 5s ease-in-out infinite;
-    }
-
-    .pet-card h3 {
-      font-size:1.3rem;
-      font-weight:700;
-      margin-bottom:0.5rem;
-      color:hsl(210,100%,20%);
-    }
-
-    .pet-card p {
-      font-size:1rem;
-      color:hsl(210,30%,35%);
-      line-height:1.7;
-    }
+    .feature:hover { background:linear-gradient(90deg, rgba(230,126,34,0.15), rgba(230,126,34,0.1)); transform:translateX(-3px); }
 
     .btn-primary {
       background:hsl(27,79%,52%);
       color:hsl(0,0%,98%);
-      padding:0.85rem 1.75rem;
+      padding:0.75rem 1.5rem;
       border-radius:0.75rem;
       border:none;
       font-weight:600;
       cursor:pointer;
-      transition:0.3s;
-      box-shadow:0 5px 15px rgba(230,126,34,0.3);
+      transition:0.3s all;
+      width:100%;
     }
-
-    .btn-primary:hover {
-      background:hsl(27,79%,58%);
-      transform:translateY(-3px);
-      box-shadow:0 10px 25px rgba(230,126,34,0.35);
-    }
+    .btn-primary:hover { background:hsl(27,79%,58%); transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
 
     @media(max-width:768px){
-      .pet-card p{font-size:0.95rem;}
+      .feature { justify-content:flex-start; }
     }
   </style>
 
-  <!-- ⚙️ JS مخصوص Petshop -->
+  <!-- JS مخصوص PetShop -->
   <script>
-    // انیمیشن ظاهر شدن کارت‌ها در اسکرول
-    const petCards = document.querySelectorAll('#petshop .pet-card');
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
-          entry.target.style.animationDelay = entry.target.style.getPropertyValue('--delay');
-        }
-      });
-    },{threshold:0.2});
-    petCards.forEach(el=>observer.observe(el));
+    // float background dynamic
+    const floats = document.querySelectorAll('#petshop div[style*="animation:float"]');
+    floats.forEach(el=>{
+      let pos=0, dir=1;
+      setInterval(()=>{
+        pos+=dir*0.3;
+        if(pos>20||pos<0) dir*=-1;
+        el.style.transform=`translateY(${pos}px)`;
+      },30);
+    });
   </script>
 
 </section>
