@@ -1,0 +1,114 @@
+<!-- office.html -->
+<section id="office" style="position:relative; min-height:80vh; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(210,100%,20%); background:linear-gradient(180deg, hsl(0,0%,96%) 0%, hsl(0,0%,98%) 100%); overflow:hidden; padding:6rem 1rem;">
+
+  <!-- پس‌زمینه تزئینی -->
+  <div style="position:absolute; top:-100px; right:-50px; width:350px; height:350px; background:rgba(27,79,52,0.08); border-radius:50%; filter:blur(120px); animation:float 8s ease-in-out infinite;"></div>
+  <div style="position:absolute; bottom:-120px; left:-60px; width:400px; height:400px; background:rgba(230,126,34,0.06); border-radius:50%; filter:blur(150px); animation:float 7s ease-in-out infinite 1s;"></div>
+
+  <div class="container" style="position:relative; z-index:2; max-width:1200px; margin:auto;">
+
+    <!-- عنوان بخش -->
+    <div style="text-align:center; margin-bottom:4rem; animation:fadeIn 1s ease-out forwards;">
+      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem; color:hsl(210,100%,20%);">ملزومات اداری</h2>
+      <p style="font-size:1.1rem; color:hsl(210,30%,40%); margin-bottom:0.75rem;">زونکن و وایت برد</p>
+      <div style="width:80px; height:4px; background:hsl(27,79%,52%); margin:0 auto; border-radius:1rem;"></div>
+    </div>
+
+    <!-- کارت محتوا با تصویر و متن -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:3rem; align-items:center;">
+
+      <!-- تصویر بخش اداری با افکت گرادینت -->
+      <div style="position:relative; min-height:300px; border-radius:1rem; overflow:hidden; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, hsl(210,100%,20%), hsl(210,100%,25%));">
+        <div style="position:absolute; inset:0; opacity:0.1; border-radius:1rem; background:radial-gradient(circle, rgba(230,126,34,0.4) 0%, transparent 70%);"></div>
+        <div style="position:relative; z-index:1; color:hsl(0,0%,98%); text-align:center;">
+          <div style="font-size:4rem; margin-bottom:1rem;">📦</div>
+          <h3 style="font-size:1.75rem; font-weight:700; margin-bottom:0.5rem;">محصولات اداری</h3>
+          <p style="color:rgba(255,255,255,0.8);">با کیفیت برتر</p>
+        </div>
+      </div>
+
+      <!-- متن و ویژگی‌ها -->
+      <div class="glass-card fadeIn" style="animation-delay:0.3s;">
+        <p style="font-size:1.15rem; line-height:1.8; margin-bottom:2rem;">
+          برای فروشگاه‌ها و کسب‌وکارهایی که به دنبال <strong style="color:hsl(27,79%,52%);">ملزومات اداری با سفارش عمده</strong> هستند، گروه Sahand Apex امکان ارائه محصولات را با برند اختصاصی مشتری فراهم می‌کند.
+        </p>
+
+        <!-- لیست ویژگی‌ها -->
+        <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
+          <div class="feature"><span style="color:hsl(27,79%,52%);">✅</span> تولید محصولات با برند اختصاصی مشتری</div>
+          <div class="feature"><span style="color:hsl(27,79%,52%);">✅</span> سفارش عمده برای فروشگاه‌ها و مراکز اداری</div>
+          <div class="feature"><span style="color:hsl(27,79%,52%);">✅</span> راهکار عملی برای تأمین محصولات با کیفیت و قیمت مناسب</div>
+        </div>
+
+        <!-- CTA Button -->
+        <button class="btn-primary" onclick="window.open('https://example.com/office-supplies','_blank')">
+          اطلاعات و سفارش
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CSS مخصوص Office -->
+  <style>
+    @keyframes float {
+      0%,100%{ transform:translateY(0px);}
+      50%{ transform:translateY(-12px);}
+    }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+
+    .glass-card {
+      background:rgba(255,255,255,0.75);
+      backdrop-filter:blur(20px);
+      border-radius:1rem;
+      padding:2rem;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      transition:0.3s all;
+    }
+    .glass-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(0,0,0,0.15); }
+
+    .feature {
+      background:rgba(255,255,255,0.2);
+      padding:0.5rem 1rem;
+      border-radius:0.75rem;
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+      font-weight:500;
+      transition:0.3s;
+    }
+    .feature:hover { background:linear-gradient(90deg, rgba(230,126,34,0.15), rgba(230,126,34,0.1)); transform:translateX(-3px); }
+
+    .btn-primary {
+      background:hsl(27,79%,52%);
+      color:hsl(0,0%,98%);
+      padding:0.75rem 1.5rem;
+      border-radius:0.75rem;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s all;
+      width:100%;
+    }
+    .btn-primary:hover { background:hsl(27,79%,58%); transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+
+    @media(max-width:768px){
+      .feature { justify-content:flex-start; }
+    }
+  </style>
+
+  <!-- JS مخصوص Office -->
+  <script>
+    // float background dynamic
+    const floats = document.querySelectorAll('#office div[style*="animation:float"]');
+    floats.forEach(el=>{
+      let pos=0, dir=1;
+      setInterval(()=>{
+        pos+=dir*0.3;
+        if(pos>20||pos<0) dir*=-1;
+        el.style.transform=`translateY(${pos}px)`;
+      },30);
+    });
+  </script>
+
+</section>
