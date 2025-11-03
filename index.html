@@ -11,81 +11,113 @@
 <link href="https://cdn.fontcdn.ir/Font/Persian/IRANSans.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+/* 🎨 طراحی واکنش‌گرا و تمیز */
 :root {
-  --background: hsl(0,0%,96%);
-  --foreground: hsl(210,100%,20%);
-  --card: hsl(0,0%,100%);
-  --accent: hsl(27,79%,52%);
-  --accent-hover: hsl(27,79%,58%);
-  --primary: hsl(210,100%,20%);
-  --primary-hover: hsl(210,100%,25%);
-  --border: hsl(0,0%,89%);
+  --background: hsl(0, 0%, 96%);
+  --foreground: hsl(210, 100%, 20%);
+  --accent: hsl(27, 79%, 52%);
+  --accent-hover: hsl(27, 79%, 58%);
+  --border: hsl(0, 0%, 85%);
   --radius: 0.75rem;
-  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --transition: 0.3s ease;
 }
 
-* { box-sizing: border-box; margin:0; padding:0; }
-
 body {
-  font-family: 'IRANSans','Vazirmatn','IBM Plex Sans',sans-serif;
+  margin: 0;
+  font-family: 'Vazirmatn', 'IBM Plex Sans', sans-serif;
   background: var(--background);
   color: var(--foreground);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-.container { max-width:1200px; margin:0 auto; padding:0 1rem; }
-
+/* ✅ ناوبری ریسپانسیو */
 nav {
-  position:fixed; top:0; left:0; right:0; z-index:50;
-  display:flex; justify-content:space-between; align-items:center;
-  padding:1rem 2rem; background:rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px); box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
 }
 
-.nav-logo { font-weight:700; font-size:1.5rem; color:var(--primary); }
-nav a {
-  text-decoration:none; color:var(--foreground); margin:0 1rem;
-  font-weight:500; position:relative; transition: var(--transition);
-}
-nav a::after {
-  content:''; position:absolute; bottom:-4px; left:0;
-  width:0%; height:2px; background:var(--accent); transition: width var(--transition);
-}
-nav a:hover::after { width:100%; }
-nav a:hover { color: var(--accent); }
-
-.menu-toggle { display:none; font-size:1.5rem; cursor:pointer; }
-.nav-links { display:flex; gap:1rem; }
-@media(max-width:768px){
-  nav { flex-wrap:wrap; padding:0.8rem 1rem; }
-  .menu-toggle { display:block; }
-  .nav-links { display:none; flex-direction:column; width:100%; text-align:right; padding:1rem 0; border-top:1px solid var(--border); }
-  .nav-links.active { display:flex; background:rgba(255,255,255,0.98); }
-  .nav-links a { margin:0.5rem 0; font-size:0.95rem; }
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--foreground);
 }
 
-section { min-height:60vh; padding:4rem 0; }
-.btn-primary {
-  background: var(--accent); color: var(--primary-hover);
-  padding:0.75rem 1.5rem; border:none; border-radius: var(--radius);
-  font-weight:600; cursor:pointer; transition: var(--transition); width: auto;
+/* لینک‌ها */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-.btn-primary:hover { background: var(--accent-hover); transform:translateY(-2px); }
 
-@keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
-.fade-in { animation:fadeIn 0.8s ease-out forwards; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--foreground);
+  font-weight: 500;
+  transition: color var(--transition);
+}
 
-@media(max-width:480px){
-  section { padding:3rem 1rem; }
-  h1 { font-size:1.8rem; }
-  h2 { font-size:1.5rem; }
-  h3 { font-size:1.2rem; }
-  p { font-size:0.95rem; line-height:1.5; }
-  .btn-primary { padding:0.6rem 1rem; font-size:0.9rem; width:100%; }
-  .container > div[style*="display:grid"] { grid-template-columns: repeat(auto-fit,minmax(180px,1fr)) !important; gap:1rem !important; }
+.nav-links a:hover,
+.nav-links a:active {
+  color: var(--accent-hover);
+}
+
+/* دکمه منو */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+/* 📱 حالت موبایل */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+    background: white;
+    border-top: 1px solid var(--border);
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+}
+
+/* ✨ محتوای اصلی */
+main {
+  margin-top: 70px; /* ارتفاع منو */
+  padding: 1rem;
 }
 </style>
 </head>
