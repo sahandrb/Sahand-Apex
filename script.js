@@ -32,12 +32,12 @@ async function loadSection(id, path) {
 const sections = [
   {id: 'hero', path: 'hero.html'},
   {id: 'introduction', path: 'introduction.html'},
-  {id: 'story', path: 'story.html'},
-  {id: 'office', path: 'office.html'},
-  {id: 'petshop', path: 'petshop.html'},
-  {id: 'philosophy', path: 'philosophy.html'},
-  {id: 'bio', path: 'bio.html'},
-  {id: 'footer', path: 'footer.html'}
+  {id: 'story', path: '/story.html'},
+  {id: 'office', path: '/office.html'},
+  {id: 'petshop', path: '/petshop.html'},
+  {id: 'philosophy', path: '/philosophy.html'},
+  {id: 'bio', path: '/bio.html'},
+  {id: 'footer', path: '/footer.html'}
 ];
 
 sections.forEach(sec => loadSection(sec.id, sec.path));
