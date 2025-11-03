@@ -1,0 +1,78 @@
+<!-- bio.html -->
+<section id="bio" style="position:relative; min-height:70vh; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; background:hsl(0,0%,98%); color:hsl(210,100%,20%); overflow:hidden; padding:6rem 1rem;">
+
+  <!-- پس‌زمینه دکوری با نور -->
+  <div style="position:absolute; top:-80px; left:-80px; width:300px; height:300px; background:rgba(27,79,52,0.08); border-radius:50%; filter:blur(120px); animation:float 8s ease-in-out infinite;"></div>
+  <div style="position:absolute; bottom:-100px; right:-60px; width:350px; height:350px; background:rgba(230,126,34,0.06); border-radius:50%; filter:blur(150px); animation:float 7s ease-in-out infinite 1s;"></div>
+
+  <div class="container" style="position:relative; z-index:2; max-width:900px; margin:auto; text-align:center;">
+
+    <!-- عنوان بخش -->
+    <div class="fadeIn">
+      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem;">درباره سهند رنجبری‌پور</h2>
+      <div style="width:80px; height:4px; background:hsl(27,79%,52%); margin:0 auto 2rem auto; border-radius:1rem;"></div>
+    </div>
+
+    <!-- محتوای اصلی -->
+    <div class="bio-card fadeIn" style="padding:2rem; border-radius:1rem; background:rgba(255,255,255,0.8); backdrop-filter:blur(15px); box-shadow:0 10px 25px rgba(0,0,0,0.08); display:flex; flex-direction:column; align-items:center; gap:1.5rem; max-width:500px; margin:0 auto;">
+
+      <!-- تصویر -->
+      <div style="width:120px; height:120px; border-radius:50%; overflow:hidden; border:3px solid hsl(27,79%,52%);">
+        <img src="https://via.placeholder.com/120" alt="سهند رنجبری‌پور" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+
+      <!-- متن معرفی -->
+      <p style="font-size:1.1rem; line-height:1.8; text-align:center;">
+        سهند رنجبری‌پور با تجربه عملی در زمینه تولید و واردات، بنیان‌گذار گروه <strong style="color:hsl(27,79%,52%);">Sahand Apex</strong> است. هدف او ارائه راهکارهای قابل اعتماد و با کیفیت به کسب‌وکارها و فروشگاه‌هاست.
+      </p>
+
+      <!-- شبکه‌های اجتماعی -->
+      <div class="social-links" style="display:flex; gap:1rem; font-size:1.5rem;">
+        <a href="https://linkedin.com" target="_blank" style="color:hsl(27,79%,52%); transition:0.3s;">🔗</a>
+        <a href="https://instagram.com" target="_blank" style="color:hsl(27,79%,52%); transition:0.3s;">📸</a>
+        <a href="https://twitter.com" target="_blank" style="color:hsl(27,79%,52%); transition:0.3s;">🐦</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CSS مخصوص Bio -->
+  <style>
+    @keyframes float {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+    }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    .bio-card {
+      animation:fadeIn 1s ease-out forwards;
+      opacity:0;
+    }
+
+    .social-links a:hover {
+      transform:translateY(-3px) scale(1.1);
+      color:hsl(27,79%,60%);
+    }
+
+    @media(max-width:768px){
+      .bio-card{padding:1.5rem;}
+      .social-links{font-size:1.3rem; gap:0.8rem;}
+    }
+  </style>
+
+  <!-- JS مخصوص Bio -->
+  <script>
+    const bioCard = document.querySelector('#bio .bio-card');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          bioCard.style.opacity = 1;
+          bioCard.style.animation = 'fadeIn 1s ease-out forwards';
+        }
+      });
+    },{threshold:0.3});
+    observer.observe(bioCard);
+  </script>
+
+</section>
