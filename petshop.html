@@ -1,0 +1,147 @@
+<!-- petshop.html -->
+<section id="petshop" style="position:relative; min-height:80vh; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(210,100%,20%); background:linear-gradient(180deg, hsl(27,79%,98%) 0%, hsl(27,79%,96%) 100%); overflow:hidden; padding:6rem 1rem;">
+
+  <!-- پس‌زمینه دکوری -->
+  <div style="position:absolute; top:-80px; right:-50px; width:350px; height:350px; background:rgba(230,126,34,0.08); border-radius:50%; filter:blur(100px); animation:float 8s ease-in-out infinite;"></div>
+  <div style="position:absolute; bottom:-120px; left:-50px; width:400px; height:400px; background:rgba(230,126,34,0.06); border-radius:50%; filter:blur(150px); animation:float 6s ease-in-out infinite 1s;"></div>
+
+  <div class="container" style="position:relative; z-index:2; max-width:1200px; margin:auto;">
+
+    <!-- عنوان بخش -->
+    <div style="text-align:center; margin-bottom:4rem; animation:fadeIn 1s ease-out forwards;">
+      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem; color:hsl(210,100%,20%);">پت‌شاپ و محصولات حیوانات خانگی</h2>
+      <p style="font-size:1.1rem; color:hsl(210,30%,40%); margin-bottom:0.75rem;">تغذیه، بهداشت و لوازم سرگرمی</p>
+      <div style="width:90px; height:4px; background:hsl(27,79%,52%); margin:0 auto; border-radius:1rem;"></div>
+    </div>
+
+    <!-- محتوای بخش: کارت‌های محصولات -->
+    <div class="petshop-grid">
+      
+      <!-- کارت غذا -->
+      <div class="pet-card fadeIn" style="--delay:0.1s;">
+        <div class="icon">🍖</div>
+        <h3>غذای حیوانات</h3>
+        <p>انواع خوراک باکیفیت برای گربه و سگ از برندهای معتبر جهانی.</p>
+      </div>
+
+      <!-- کارت لوازم -->
+      <div class="pet-card fadeIn" style="--delay:0.3s;">
+        <div class="icon">🦴</div>
+        <h3>لوازم و اسباب‌بازی</h3>
+        <p>محصولات سرگرمی و مراقبت برای حیوانات خانگی، با تنوع بالا.</p>
+      </div>
+
+      <!-- کارت بهداشت -->
+      <div class="pet-card fadeIn" style="--delay:0.5s;">
+        <div class="icon">🧴</div>
+        <h3>محصولات بهداشتی</h3>
+        <p>شامپوها، برس‌ها و محصولات تخصصی مراقبت از پوست و مو.</p>
+      </div>
+
+      <!-- کارت خدمات -->
+      <div class="pet-card fadeIn" style="--delay:0.7s;">
+        <div class="icon">🐕</div>
+        <h3>خدمات تأمین عمده</h3>
+        <p>برای فروشگاه‌های پت‌شاپ و مراکز دام‌پزشکی، با بسته‌بندی اختصاصی.</p>
+      </div>
+    </div>
+
+    <!-- CTA نهایی -->
+    <div style="text-align:center; margin-top:4rem;">
+      <button class="btn-primary" onclick="window.open('https://example.com/petshop','_blank')">
+        مشاهده و همکاری
+      </button>
+    </div>
+  </div>
+
+  <!-- 🎨 CSS مخصوص Petshop -->
+  <style>
+    @keyframes float {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+    }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    .petshop-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:2rem;
+    }
+
+    .pet-card {
+      background:rgba(255,255,255,0.8);
+      backdrop-filter:blur(20px);
+      border-radius:1rem;
+      padding:2rem 1.5rem;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+      transition:0.3s all;
+      opacity:0;
+      transform:translateY(30px);
+    }
+
+    .pet-card:hover {
+      transform:translateY(-8px);
+      box-shadow:0 15px 30px rgba(230,126,34,0.2);
+    }
+
+    .pet-card .icon {
+      font-size:2.5rem;
+      margin-bottom:1rem;
+      color:hsl(27,79%,52%);
+      filter:drop-shadow(0 3px 5px rgba(230,126,34,0.3));
+      animation:float 5s ease-in-out infinite;
+    }
+
+    .pet-card h3 {
+      font-size:1.3rem;
+      font-weight:700;
+      margin-bottom:0.5rem;
+      color:hsl(210,100%,20%);
+    }
+
+    .pet-card p {
+      font-size:1rem;
+      color:hsl(210,30%,35%);
+      line-height:1.7;
+    }
+
+    .btn-primary {
+      background:hsl(27,79%,52%);
+      color:hsl(0,0%,98%);
+      padding:0.85rem 1.75rem;
+      border-radius:0.75rem;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(230,126,34,0.3);
+    }
+
+    .btn-primary:hover {
+      background:hsl(27,79%,58%);
+      transform:translateY(-3px);
+      box-shadow:0 10px 25px rgba(230,126,34,0.35);
+    }
+
+    @media(max-width:768px){
+      .pet-card p{font-size:0.95rem;}
+    }
+  </style>
+
+  <!-- ⚙️ JS مخصوص Petshop -->
+  <script>
+    // انیمیشن ظاهر شدن کارت‌ها در اسکرول
+    const petCards = document.querySelectorAll('#petshop .pet-card');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
+          entry.target.style.animationDelay = entry.target.style.getPropertyValue('--delay');
+        }
+      });
+    },{threshold:0.2});
+    petCards.forEach(el=>observer.observe(el));
+  </script>
+
+</section>
