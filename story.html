@@ -21,36 +21,124 @@
     </div>
 
     <!-- Timeline حرفه‌ای -->
-    <div class="timeline">
-      <div class="line"></div>
+    <!-- Timeline حرفه‌ای -->
+<div class="timeline">
+  <div class="line"></div>
 
-      <div class="milestone" style="--delay:0.1s">
-        <div class="circle">💡</div>
-        <div class="content glass-card">
-          <h3>شروع</h3>
-          <p>شناسایی نیاز بازار به محصولات با کیفیت</p>
-        </div>
-      </div>
-
-      <div class="milestone" style="--delay:0.3s">
-        <div class="circle">📈</div>
-        <div class="content glass-card">
-          <h3>رشد</h3>
-          <p>توسعه فعالیت در ملزومات اداری و پت‌شاپ</p>
-        </div>
-      </div>
-
-      <div class="milestone" style="--delay:0.5s">
-        <div class="circle">🏆</div>
-        <div class="content glass-card">
-          <h3>موفقیت</h3>
-          <p>ارائه خدمات حرفه‌ای و قابل اعتماد</p>
-        </div>
-      </div>
+  <div class="milestone" style="--delay:0.1s">
+    <div class="circle">💡</div>
+    <div class="content glass-card">
+      <h3>شروع</h3>
+      <p>شناسایی نیاز بازار به محصولات با کیفیت</p>
     </div>
   </div>
 
-  <style>
+  <div class="milestone" style="--delay:0.3s">
+    <div class="circle">📈</div>
+    <div class="content glass-card">
+      <h3>رشد</h3>
+      <p>توسعه فعالیت در ملزومات اداری و پت‌شاپ</p>
+    </div>
+  </div>
+
+  <div class="milestone" style="--delay:0.5s">
+    <div class="circle">🏆</div>
+    <div class="content glass-card">
+      <h3>موفقیت</h3>
+      <p>ارائه خدمات حرفه‌ای و قابل اعتماد</p>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Timeline container */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+/* خط عمودی */
+.timeline .line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, hsl(27,79%,52%), hsl(210,100%,20%));
+  border-radius: 2px;
+  z-index:1;
+}
+
+/* Milestone */
+.milestone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+  max-width: 700px;
+  width: 100%;
+  z-index:2;
+}
+
+.milestone:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.milestone .circle {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(27,79%,52%), hsl(27,79%,62%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+  box-shadow: 0 5px 20px rgba(230,126,34,0.4);
+}
+
+.milestone .content {
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.milestone .content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(230,126,34,0.3);
+}
+
+.milestone h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: hsl(210,100%,20%);
+  margin-bottom: 0.5rem;
+}
+
+.milestone p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: hsl(210,30%,40%);
+}
+
+/* ریسپانسیو موبایل */
+@media(max-width:768px){
+  .timeline .line { left: 10px; transform: none; }
+  .milestone { flex-direction: row; justify-content: flex-start; }
+  .milestone:nth-child(even) { flex-direction: row; }
+  .milestone .content { text-align: right; }
+}
     /* Timeline container */
     .timeline {
       position: relative;
@@ -157,4 +245,23 @@
     milestones.forEach(el => observer.observe(el));
   </script>
 
+<script>
+// انیمیشن هنگام اسکرول (با تاخیر CSS)
+function initTimelineAnimation() {
+  const milestones = document.querySelectorAll('#story .milestone');
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.transitionDelay = entry.target.style.getPropertyValue('--delay') || '0s';
+      }
+    });
+  }, {threshold:0.3});
+  milestones.forEach(el => observer.observe(el));
+}
+
+// اجرا بعد از بارگذاری بخش از fetch
+document.addEventListener('DOMContentLoaded', initTimelineAnimation);
+</script>
 </section>
