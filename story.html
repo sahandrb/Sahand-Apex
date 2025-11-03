@@ -1,4 +1,4 @@
-<!-- story.html -->
+<!-- story.html - نسخه حرفه‌ای و هماهنگ -->
 <section id="story" style="position:relative; background:hsl(0,0%,96%); font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(210,100%,20%); overflow:hidden; padding:6rem 1rem;">
 
   <!-- پس‌زمینه نرم با نور -->
@@ -14,140 +14,147 @@
     </div>
 
     <!-- توضیح اصلی -->
-    <div class="glass-card story-main fadeIn">
+    <div class="glass-card story-main fadeIn" style="padding:2rem; margin-bottom:4rem;">
       <p style="font-size:1.15rem; line-height:1.8; text-align:justify;">
         سهند رنجبری‌پور پس از مشاهده نیاز بازار به محصولات با کیفیت و دسترس‌پذیر، فعالیت خود را در زمینه تأمین ملزومات اداری و محصولات پت‌شاپ آغاز کرد. تجربه تولید داخلی و واردات مستقیم، پایه‌ای برای ارائه خدمات حرفه‌ای و قابل اعتماد شد.
       </p>
     </div>
 
-    <!-- Milestones Timeline -->
-   <!-- Timeline اصلاح شده -->
-<div class="timeline">
- 
+    <!-- Timeline حرفه‌ای -->
+    <div class="timeline">
+      <div class="line"></div>
 
-  <div class="milestone" style="--delay:0.1s">
-    <div class="circle">💡</div>
-    <div class="content">
-      <h3>شروع</h3>
-      <p>شناسایی نیاز بازار به محصولات با کیفیت</p>
+      <div class="milestone" style="--delay:0.1s">
+        <div class="circle">💡</div>
+        <div class="content glass-card">
+          <h3>شروع</h3>
+          <p>شناسایی نیاز بازار به محصولات با کیفیت</p>
+        </div>
+      </div>
+
+      <div class="milestone" style="--delay:0.3s">
+        <div class="circle">📈</div>
+        <div class="content glass-card">
+          <h3>رشد</h3>
+          <p>توسعه فعالیت در ملزومات اداری و پت‌شاپ</p>
+        </div>
+      </div>
+
+      <div class="milestone" style="--delay:0.5s">
+        <div class="circle">🏆</div>
+        <div class="content glass-card">
+          <h3>موفقیت</h3>
+          <p>ارائه خدمات حرفه‌ای و قابل اعتماد</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="milestone" style="--delay:0.3s">
-    <div class="circle">📈</div>
-    <div class="content">
-      <h3>رشد</h3>
-      <p>توسعه فعالیت در ملزومات اداری و پت‌شاپ</p>
-    </div>
-  </div>
-
-  <div class="milestone" style="--delay:0.5s">
-    <div class="circle">🏆</div>
-    <div class="content">
-      <h3>موفقیت</h3>
-      <p>ارائه خدمات حرفه‌ای و قابل اعتماد</p>
-    </div>
-  </div>
-</div>
-
-<style>
-/* کانتینر timeline */
-.timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  margin-top: 4rem;
-}
-
-/* خط عمودی */
-
-/* Milestone */
-.milestone {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-  max-width: 600px;
-  z-index: 1;
-}
-
-/* نوبت چپ و راست */
-.milestone:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-/* دایره milestone */
-.milestone .circle {
-  flex-shrink: 0;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, hsl(27,79%,52%), hsl(27,79%,62%));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: white;
-  box-shadow: 0 0 20px rgba(230,126,34,0.3);
-}
-
-/* محتوای متن */
-.milestone .content {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
-  border-radius: 0.75rem;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-
-.milestone .content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(230,126,34,0.2);
-}
-
-.milestone h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: hsl(210,100%,20%);
-  margin-bottom: 0.5rem;
-}
-
-.milestone p {
-  font-size: 1rem;
-  color: hsl(210,30%,40%);
-  line-height: 1.6;
-}
-
-/* ریسپانسیو موبایل */
-@media(max-width:768px){
-  .timeline .line { left: 10px; transform: none; }
-  .milestone { flex-direction: row; justify-content: flex-start; }
-  .milestone:nth-child(even) { flex-direction: row; }
-  .milestone .content { text-align: right; }
-}
-</style>
-
-<script>
-// انیمیشن ظاهر شدن milestones هنگام اسکرول
-const milestones = document.querySelectorAll('.timeline .milestone');
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      entry.target.style.transitionDelay = entry.target.style.getPropertyValue('--delay') || '0s';
+  <style>
+    /* Timeline container */
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+      margin-top: 4rem;
     }
-  });
-}, {threshold:0.3});
-milestones.forEach(el => observer.observe(el));
-</script>
 
+    /* خط عمودی */
+    .timeline .line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      background: linear-gradient(180deg, hsl(27,79%,52%), hsl(210,100%,20%));
+      border-radius: 2px;
+      z-index: 0;
+    }
+
+    /* Milestone */
+    .milestone {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+      max-width: 700px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .milestone:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .milestone .circle {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, hsl(27,79%,52%), hsl(27,79%,62%));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: white;
+      box-shadow: 0 5px 20px rgba(230,126,34,0.4);
+    }
+
+    .milestone .content {
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .milestone .content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(230,126,34,0.3);
+    }
+
+    .milestone h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: hsl(210,100%,20%);
+      margin-bottom: 0.5rem;
+    }
+
+    .milestone p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: hsl(210,30%,40%);
+    }
+
+    /* ریسپانسیو موبایل */
+    @media(max-width:768px){
+      .timeline .line { left: 10px; transform: none; }
+      .milestone { flex-direction: row; justify-content: flex-start; }
+      .milestone:nth-child(even) { flex-direction: row; }
+      .milestone .content { text-align: right; }
+    }
+  </style>
+
+  <script>
+    // انیمیشن هنگام اسکرول
+    const milestones = document.querySelectorAll('.timeline .milestone');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.transitionDelay = entry.target.style.getPropertyValue('--delay') || '0s';
+        }
+      });
+    }, {threshold:0.3});
+    milestones.forEach(el => observer.observe(el));
+  </script>
 
 </section>
