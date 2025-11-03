@@ -54,41 +54,81 @@
   </div>
 
   <!-- 🎨 CSS مخصوص Hero -->
-  <style>
-    @keyframes float {
-      0%,100%{ transform:translateY(0px);}
-      50%{ transform:translateY(-15px);}
-    }
-    .float-element { animation:float 6s ease-in-out infinite; }
+ <style>
+  /* پایه */
+  #hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
 
-    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-    @keyframes slideUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+  #hero p {
+    font-size: 1.25rem;
+  }
 
-    .fade-in { animation:fadeIn 1s ease-out forwards; }
-    .btn-primary {
-      background:hsl(27,79%,52%); color:hsl(0,0%,98%);
-      padding:0.75rem 1.5rem; border-radius:0.75rem; border:none; cursor:pointer; font-weight:600;
-      transition:0.3s all; box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    }
-    .btn-primary:hover { background:hsl(27,79%,58%); transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+  #hero .btn-primary,
+  #hero .btn-outline {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
 
-    .btn-outline {
-      background:transparent; border:2px solid hsl(0,0%,98%); color:hsl(0,0%,98%);
-      padding:0.75rem 1.5rem; border-radius:0.75rem; cursor:pointer; font-weight:600;
-      transition:0.3s all;
-    }
-    .btn-outline:hover { background:rgba(255,255,255,0.2); transform:translateY(-2px); }
+  #hero .glass-card {
+    padding: 1.5rem;
+  }
 
-    .glass-card {
-      background:rgba(255,255,255,0.1);
-      backdrop-filter:blur(15px);
-      padding:1.5rem;
-      border-radius:1rem;
-      text-align:center;
-      transition:0.3s all;
+  /* 📱 ریسپانسیو موبایل */
+  @media (max-width: 768px) {
+    #hero {
+      min-height: 90vh;
+      padding: 3rem 1rem;
     }
-    .glass-card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
-  </style>
+
+    #hero h1 {
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+
+    #hero p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    #hero .btn-primary,
+    #hero .btn-outline {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+    }
+
+    #hero .glass-card div:first-child {
+      font-size: 1.5rem;
+    }
+
+    #hero .glass-card div:last-child {
+      font-size: 0.9rem;
+    }
+
+    #hero .glass-card {
+      padding: 1rem;
+      border-radius: 0.75rem;
+    }
+
+    #hero .float-element {
+      width: 180px !important;
+      height: 180px !important;
+      filter: blur(80px);
+    }
+  }
+
+  /* 📱📱 حالت خیلی کوچک (زیر 400px) */
+  @media (max-width: 400px) {
+    #hero h1 {
+      font-size: 1.6rem;
+    }
+    #hero p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 
   <!-- 🎬 JS مخصوص Hero -->
   <script>
