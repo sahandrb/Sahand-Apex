@@ -1,28 +1,27 @@
-<!-- hero.html (نسخه موبایل‌فرندلی) -->
-<section id="hero" style="position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; text-align:center;">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-<link href="https://cdn.fontcdn.ir/Font/Persian/IRANSans.css" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- پس‌زمینه -->
+<!-- hero.html (نسخه موبایل‌فرندلی و هماهنگ با پروژه Sahand Apex) -->
+<section id="hero" style="position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; text-align:center; color:hsl(0,0%,98%);">
+  
+  <!-- پس‌زمینه گرادینتی -->
   <div style="position:absolute; inset:0; background:linear-gradient(135deg, hsl(210,100%,20%), hsl(210,100%,30%)); z-index:0;"></div>
-  <div class="float-element" style="position:absolute; width:300px; height:300px; top:10%; right:5%; background:rgba(230,126,34,0.1); border-radius:50%; filter:blur(120px); z-index:1;"></div>
-  <div class="float-element" style="position:absolute; width:400px; height:400px; bottom:5%; left:5%; background:rgba(27,79,52,0.05); border-radius:50%; filter:blur(150px); z-index:1;"></div>
+  <div class="float-element" style="position:absolute; width:280px; height:280px; top:10%; right:5%; background:rgba(230,126,34,0.1); border-radius:50%; filter:blur(100px); z-index:1;"></div>
+  <div class="float-element" style="position:absolute; width:380px; height:380px; bottom:5%; left:5%; background:rgba(27,79,52,0.08); border-radius:50%; filter:blur(140px); z-index:1;"></div>
 
   <!-- محتوای اصلی -->
   <div style="position:relative; z-index:2; max-width:700px; padding:0 1rem;">
+    
     <!-- Badge -->
-    <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; border-radius:999px; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.3); margin-bottom:2rem; animation:fadeIn 1s ease-out forwards;">
+    <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; border-radius:999px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); margin-bottom:2rem; backdrop-filter:blur(10px);">
       <span>📦</span>
       <span style="font-weight:500;">تأمین و واردات B2B</span>
     </div>
 
     <!-- عنوان -->
-    <h1 style="font-size:3rem; font-weight:700; line-height:1.3; margin-bottom:1rem; animation:slideUp 1s ease-out forwards; animation-delay:0.2s; background:linear-gradient(135deg, hsl(27,79%,52%), hsl(210,100%,20%)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+    <h1 style="font-size:3rem; font-weight:700; line-height:1.3; margin-bottom:1rem; background:linear-gradient(135deg, hsl(27,79%,52%), hsl(0,0%,98%)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
       گروه <br><span style="color:hsl(27,79%,52%)">Sahand Apex</span>
     </h1>
 
     <!-- توضیح -->
-    <p style="font-size:1.1rem; margin-bottom:2rem; line-height:1.7; color:hsl(0,0%,98%); animation:fadeIn 1s ease-out forwards; animation-delay:0.4s;">
+    <p style="font-size:1.1rem; margin-bottom:2rem; line-height:1.7; color:hsl(0,0%,98%);">
       تأمین‌کننده و واردکننده محصولات <strong>B2B</strong> در حوزه ملزومات اداری و پت‌شاپ
     </p>
 
@@ -40,15 +39,10 @@
     </div>
   </div>
 
+  <!-- 🎨 CSS -->
   <style>
-    @keyframes float {
-      0%,100%{ transform:translateY(0px);}
-      50%{ transform:translateY(-15px);}
-    }
+    @keyframes float { 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-15px);} }
     .float-element { animation:float 6s ease-in-out infinite; }
-
-    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-    @keyframes slideUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
 
     .btn-primary {
       background:hsl(27,79%,52%);
@@ -60,7 +54,6 @@
       font-weight:600;
       transition:0.3s;
       box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      width:auto;
     }
     .btn-primary:hover { background:hsl(27,79%,58%); transform:translateY(-3px); }
 
@@ -87,16 +80,16 @@
 
     /* 📱 نسخه موبایل */
     @media(max-width:768px){
-      #hero h1 { font-size:2.2rem; line-height:1.4; }
-      #hero p { font-size:1rem; }
+      #hero h1 { font-size:2rem; line-height:1.4; }
+      #hero p { font-size:0.95rem; }
       .btn-primary, .btn-outline { width:100%; font-size:1rem; }
       .glass-card div:first-child { font-size:1.5rem; }
       .glass-card { padding:0.75rem; }
     }
   </style>
 
+  <!-- ⚙️ JS -->
   <script>
-    // افکت شناوری نرم
     const floats = document.querySelectorAll('#hero .float-element');
     floats.forEach(el=>{
       let pos=0, dir=1;
