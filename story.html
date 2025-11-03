@@ -1,15 +1,15 @@
-<!-- story.html - نسخه جادویی و بهینه -->
+<!-- story.html - نسخه هماهنگ و موبایل فرندلی -->
 <section id="story" style="position:relative; background:hsl(0,0%,96%); font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(210,100%,20%); overflow:hidden; padding:6rem 1rem;">
 
   <!-- پس‌زمینه نرم و نورهای تزئینی -->
-  <div style="position:absolute; top:-120px; left:-50px; width:300px; height:300px; background:rgba(230,126,34,0.08); border-radius:50%; filter:blur(100px); animation:float 8s ease-in-out infinite;"></div>
-  <div style="position:absolute; bottom:-150px; right:-60px; width:350px; height:350px; background:rgba(27,79,52,0.06); border-radius:50%; filter:blur(120px); animation:float 7s ease-in-out infinite 1s;"></div>
+  <div style="position:absolute; top:-100px; left:-50px; width:250px; height:250px; background:rgba(230,126,34,0.08); border-radius:50%; filter:blur(100px); animation:float 8s ease-in-out infinite;"></div>
+  <div style="position:absolute; bottom:-120px; right:-60px; width:300px; height:300px; background:rgba(27,79,52,0.06); border-radius:50%; filter:blur(120px); animation:float 7s ease-in-out infinite 1s;"></div>
 
   <div class="container" style="position:relative; z-index:2; max-width:1200px; margin:auto;">
 
-    <!-- عنوان -->
-    <div style="text-align:center; margin-bottom:4rem; animation:fadeIn 1s ease-out forwards;">
-      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem; color:hsl(210,100%,20%);">داستان شروع و تجربه</h2>
+    <!-- عنوان بخش -->
+    <div style="text-align:center; margin-bottom:3rem; animation:fadeIn 1s ease-out forwards;">
+      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem; color:hsl(210,100%,20%);">داستان ما</h2>
       <div style="width:100px; height:4px; background:hsl(27,79%,52%); margin:0 auto; border-radius:1rem;"></div>
     </div>
 
@@ -20,40 +20,35 @@
       </p>
     </div>
 
-    <!-- کارت‌های milestones جادویی -->
+    <!-- کارت‌های مراحل داستان -->
     <div class="milestones-container">
 
       <div class="milestone-card fadeIn" style="--delay:0.1s;">
-        <div class="icon-circle">
-          <span style="font-size:2rem;">🌟</span>
-        </div>
+        <div class="icon-circle">💡</div>
         <h3>شروع</h3>
-        <p>شناسایی نیاز بازار به محصولات با کیفیت و دسترس‌پذیر</p>
+        <p>شناسایی نیاز بازار و آغاز فعالیت با هدف ارائه محصولات با کیفیت</p>
       </div>
 
       <div class="milestone-card fadeIn" style="--delay:0.3s;">
-        <div class="icon-circle">
-          <span style="font-size:2rem;">🚀</span>
-        </div>
+        <div class="icon-circle">🚀</div>
         <h3>رشد</h3>
-        <p>توسعه فعالیت در ملزومات اداری و پت‌شاپ با کیفیت عالی</p>
+        <p>گسترش فعالیت در ملزومات اداری و محصولات پت‌شاپ</p>
       </div>
 
       <div class="milestone-card fadeIn" style="--delay:0.5s;">
-        <div class="icon-circle">
-          <span style="font-size:2rem;">🏆</span>
-        </div>
+        <div class="icon-circle">🏆</div>
         <h3>موفقیت</h3>
-        <p>ارائه خدمات حرفه‌ای و قابل اعتماد با برند معتبر</p>
+        <p>ارائه خدمات حرفه‌ای و قابل اعتماد برای کسب‌وکارها و فروشگاه‌ها</p>
       </div>
 
     </div>
+
   </div>
 
   <!-- CSS -->
   <style>
-    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
-    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes float { 0%,100% {transform:translateY(0);} 50% {transform:translateY(-10px);} }
 
     .fadeIn { animation:fadeIn 1s ease-out forwards; opacity:0; }
 
@@ -103,11 +98,12 @@
       align-items:center;
       justify-content:center;
       box-shadow:0 0 20px rgba(230,126,34,0.3);
+      font-size:2rem;
       animation:float 5s ease-in-out infinite;
     }
 
-    .milestone-card h3 { font-size:1.2rem; font-weight:700; margin-bottom:0.5rem; color:hsl(0,0%,98%);}
-    .milestone-card p { font-size:0.95rem; line-height:1.6; color:hsl(0,0%,98%); }
+    .milestone-card h3 { font-size:1.2rem; font-weight:700; margin-bottom:0.5rem; }
+    .milestone-card p { font-size:0.95rem; line-height:1.6; }
 
     @media(max-width:768px){
       .milestones-container { flex-direction:column; gap:1.5rem; }
@@ -115,7 +111,7 @@
       .glass-card { padding:1rem 1rem; }
       .milestone-card h3 { font-size:1.1rem; }
       .milestone-card p { font-size:0.9rem; }
-      .icon-circle { width:60px; height:60px; }
+      .icon-circle { width:60px; height:60px; font-size:1.5rem; }
     }
   </style>
 
