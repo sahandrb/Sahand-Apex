@@ -1,82 +1,139 @@
-<!-- hero.html -->
-<section id="hero" style="position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden; font-family:'Vazirmatn','IBM Plex Sans',sans-serif;">
+<!-- hero.html - نسخه بهینه و موبایل فرندلی -->
+<section id="hero" class="hero-section">
+  <div class="hero-bg"></div>
 
-  <!-- 🎨 پس‌زمینه گرادینتی -->
-  <div style="position:absolute; inset:0; background:linear-gradient(135deg, hsl(210,100%,20%), hsl(210,100%,30%)); z-index:0;"></div>
+  <!-- عناصر شناور تزئینی -->
+  <div class="float-element float-1"></div>
+  <div class="float-element float-2"></div>
 
-  <!-- 🌙 عناصر نوری -->
-  <div class="float-element" style="position:absolute; width:300px; height:300px; top:10%; right:5%; background:rgba(230,126,34,0.1); border-radius:50%; filter:blur(120px); z-index:1;"></div>
-  <div class="float-element" style="position:absolute; width:400px; height:400px; bottom:5%; left:5%; background:rgba(27,79,52,0.05); border-radius:50%; filter:blur(150px); z-index:1;"></div>
-
-  <!-- 💎 محتوای اصلی -->
-  <div class="hero-content" style="position:relative; z-index:2; text-align:center; max-width:700px; width:100%; margin:auto; padding:0 1.5rem; box-sizing:border-box;">
-
+  <div class="hero-content container">
     <!-- Badge -->
-    <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; border-radius:999px; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.3); margin-bottom:2rem;">
+    <div class="hero-badge fade-in">
       <span>📦</span>
-      <span style="font-weight:500;">تأمین و واردات B2B</span>
+      <span>تأمین و واردات B2B</span>
     </div>
 
     <!-- عنوان -->
-    <h1 style="font-size:4rem; font-weight:700; line-height:1.2; margin-bottom:1rem; background:linear-gradient(135deg, hsl(27,79%,52%), hsl(210,100%,20%)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
-      گروه <br><span style="color:hsl(27,79%,52%)">Sahand Apex</span>
+    <h1 class="hero-title slide-up">
+      گروه <br><span class="accent-text">Sahand Apex</span>
     </h1>
 
-    <!-- توضیح -->
-    <p class="hero-desc">
+    <!-- توضیح کوتاه -->
+    <p class="hero-desc fade-in">
       تأمین‌کننده و واردکننده محصولات <strong>B2B</strong> در حوزه ملزومات اداری و پت‌شاپ
     </p>
 
     <!-- دکمه‌ها -->
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-bottom:3rem;">
-      <button class="btn-primary" onclick="document.getElementById('office').scrollIntoView({behavior:'smooth'})">
-        🛒 مشاهده محصولات
-      </button>
-      <button class="btn-outline" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
-        درباره ما
-      </button>
+    <div class="hero-buttons">
+      <button class="btn-primary" onclick="document.getElementById('office').scrollIntoView({behavior:'smooth'})">🛒 مشاهده محصولات</button>
+      <button class="btn-outline" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">درباره ما</button>
     </div>
 
-    <!-- آمار -->
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; max-width:600px; margin:0 auto;">
+    <!-- آمار کوتاه -->
+    <div class="hero-stats">
       <div class="glass-card">
-        <div class="num">100+</div>
+        <div class="stat-number">100+</div>
         <div>محصولات متنوع</div>
       </div>
       <div class="glass-card">
-        <div class="num">B2B</div>
+        <div class="stat-number">B2B</div>
         <div>همکاری با کسب‌وکارها</div>
       </div>
       <div class="glass-card">
-        <div class="num">24/7</div>
+        <div class="stat-number">24/7</div>
         <div>پشتیبانی</div>
       </div>
     </div>
-
   </div>
 
-  <!-- 🌈 CSS -->
   <style>
-    @keyframes float { 0%,100%{ transform:translateY(0px);} 50%{ transform:translateY(-15px);} }
-    .float-element { animation:float 6s ease-in-out infinite; }
-
-    .hero-desc {
-      font-size:1.25rem;
-      margin-bottom:2rem;
-      line-height:1.6;
+    /* Hero Section */
+    .hero-section {
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:'Vazirmatn','IBM Plex Sans',sans-serif;
+      overflow:hidden;
       color:hsl(0,0%,98%);
     }
 
+    /* پس‌زمینه */
+    .hero-bg {
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, hsl(210,100%,20%), hsl(210,100%,30%));
+      z-index:0;
+    }
+
+    /* عناصر شناور */
+    .float-element {
+      position:absolute;
+      border-radius:50%;
+      filter:blur(120px);
+      z-index:1;
+      animation:float 6s ease-in-out infinite;
+    }
+    .float-1 { width:300px; height:300px; top:10%; right:5%; background:rgba(230,126,34,0.1); }
+    .float-2 { width:400px; height:400px; bottom:5%; left:5%; background:rgba(27,79,52,0.05); }
+
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-15px);} }
+
+    /* کانتینر محتوا */
+    .hero-content {
+      position:relative;
+      z-index:2;
+      text-align:center;
+      max-width:700px;
+      padding:0 1rem;
+    }
+
+    /* Badge */
+    .hero-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      padding:0.5rem 1rem;
+      border-radius:999px;
+      background:rgba(255,255,255,0.2);
+      border:1px solid rgba(255,255,255,0.3);
+      margin-bottom:2rem;
+      opacity:0;
+    }
+
+    /* انیمیشن‌ها */
+    .fade-in { opacity:0; animation:fadeIn 1s ease-out forwards; }
+    .slide-up { opacity:0; transform:translateY(20px); animation:slideUp 1s ease-out forwards; }
+
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes slideUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    /* عنوان و متن */
+    .hero-title {
+      font-size:3rem;
+      font-weight:700;
+      line-height:1.2;
+      margin-bottom:1rem;
+      background:linear-gradient(135deg, hsl(27,79%,52%), hsl(210,100%,20%));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .accent-text { color:hsl(27,79%,52%); }
+
+    .hero-desc { font-size:1.1rem; line-height:1.5; margin-bottom:2rem; }
+
+    /* دکمه‌ها */
+    .hero-buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-bottom:3rem; }
     .btn-primary {
       background:hsl(27,79%,52%);
       color:hsl(0,0%,98%);
       padding:0.75rem 1.5rem;
       border-radius:0.75rem;
       border:none;
-      cursor:pointer;
       font-weight:600;
+      cursor:pointer;
       transition:0.3s all;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
     }
     .btn-primary:hover { background:hsl(27,79%,58%); transform:translateY(-3px); }
 
@@ -86,69 +143,51 @@
       color:hsl(0,0%,98%);
       padding:0.75rem 1.5rem;
       border-radius:0.75rem;
-      cursor:pointer;
       font-weight:600;
+      cursor:pointer;
       transition:0.3s all;
     }
     .btn-outline:hover { background:rgba(255,255,255,0.2); transform:translateY(-2px); }
 
+    /* آمار */
+    .hero-stats {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:1rem;
+      max-width:600px;
+      margin:0 auto;
+    }
     .glass-card {
-      background:rgba(255,255,255,0.12);
-      backdrop-filter:blur(20px);
-      padding:1.25rem;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(15px);
+      padding:1.5rem;
       border-radius:1rem;
       text-align:center;
       transition:0.3s all;
-      color:hsl(0,0%,98%);
     }
-    .glass-card .num {
-      font-size:1.8rem;
-      font-weight:700;
-      color:hsl(27,79%,52%);
-      margin-bottom:0.25rem;
-    }
-    .glass-card:hover {
-      transform:translateY(-5px);
-      box-shadow:0 8px 18px rgba(0,0,0,0.15);
-    }
+    .glass-card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
 
-    /* 📱 نسخه موبایل */
-    @media (max-width: 768px) {
-      .hero-content {
-        padding:0 1rem;
-      }
-      #hero h1 {
-        font-size:2.3rem !important;
-        line-height:1.3 !important;
-      }
-      .hero-desc {
-        font-size:1rem;
-        margin-bottom:1.5rem;
-      }
-      .btn-primary, .btn-outline {
-        width:100%;
-        max-width:320px;
-      }
-      .glass-card {
-        padding:1rem;
-      }
-      .glass-card .num {
-        font-size:1.5rem;
-      }
+    .stat-number { font-size:2rem; font-weight:700; color:hsl(27,79%,52%); }
+
+    /* ریسپانسیو */
+    @media(max-width:768px){
+      .hero-title { font-size:2rem; }
+      .hero-desc { font-size:1rem; }
+      .btn-primary, .btn-outline { width:100%; }
+      .hero-stats { grid-template-columns:1fr; gap:0.75rem; }
     }
   </style>
 
-  <!-- ⚙️ JS -->
   <script>
-    const floats = document.querySelectorAll('#hero .float-element');
-    floats.forEach(el=>{
-      let pos=0, dir=1;
-      setInterval(()=>{
-        pos+=dir*0.3;
-        if(pos>20 || pos<0) dir*=-1;
-        el.style.transform=`translateY(${pos}px)`;
-      },30);
-    });
+    // IntersectionObserver برای انیمیشن هنگام اسکرول
+    const heroElements = document.querySelectorAll('#hero .fade-in, #hero .slide-up');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.2 });
+    heroElements.forEach(el=>observer.observe(el));
   </script>
-
 </section>
