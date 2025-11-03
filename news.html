@@ -1,0 +1,69 @@
+<!-- news.html -->
+<section id="news" class="news-section" style="position:relative; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(210,100%,20%); background:hsl(0,0%,96%); overflow:hidden; padding:6rem 1rem;">
+
+  <!-- پس‌زمینه Float تزئینی -->
+  <div style="position:absolute; top:-80px; left:-60px; width:250px; height:250px; background:rgba(230,126,34,0.08); border-radius:50%; filter:blur(120px); animation:float 7s ease-in-out infinite;"></div>
+  <div style="position:absolute; bottom:-100px; right:-50px; width:300px; height:300px; background:rgba(27,79,52,0.06); border-radius:50%; filter:blur(150px); animation:float 8s ease-in-out infinite 1s;"></div>
+
+  <div class="container" style="position:relative; z-index:2; max-width:1200px; margin:auto;">
+
+    <!-- عنوان بخش -->
+    <div class="section-header fadeIn" style="text-align:center; margin-bottom:4rem;">
+      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem;">اخبار و مقالات</h2>
+      <div class="divider" style="width:100px; height:4px; background:hsl(27,79%,52%); margin:0 auto 1.5rem auto; border-radius:1rem;"></div>
+      <p style="font-size:1.1rem; color:hsl(210,30%,40%); max-width:700px; margin:auto;">
+        جدیدترین مقالات و خبرهای گروه <strong style="color:hsl(27,79%,52%);">Sahand Apex</strong>
+      </p>
+    </div>
+
+    <!-- لیست مقالات با htmx برای بارگذاری Progressive -->
+    <div class="news-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem;" 
+         hx-get="article1.html" hx-trigger="load" hx-swap="beforeend">
+
+      <!-- کارت مقاله نمونه اولیه -->
+      <div class="news-card fadeIn" style="--delay:0.1s;">
+        <img src="https://via.placeholder.com/400x250" alt="عنوان مقاله">
+        <div class="news-content" style="padding:1.5rem;">
+          <h3>عنوان مقاله شماره ۱</h3>
+          <p class="news-date" style="font-size:0.9rem; color:hsl(210,30%,40%); margin-bottom:1rem;">03 نوامبر 2025</p>
+          <p class="news-summary" style="font-size:1rem; line-height:1.6; margin-bottom:1rem;">
+            خلاصه کوتاه مقاله برای جذب کاربر و توضیح سریع درباره موضوع مقاله...
+          </p>
+          <a href="article1.html" class="read-more" style="font-weight:600; color:hsl(27,79%,52%); text-decoration:none;">ادامه مطلب →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CSS داخلی -->
+  <style>
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    .fadeIn { opacity:0; animation:fadeIn 1s ease-out forwards; }
+    .news-card { background:rgba(255,255,255,0.8); backdrop-filter:blur(15px); border-radius:1rem; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition:0.3s all; }
+    .news-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(0,0,0,0.15); }
+    .read-more:hover { color:hsl(27,79%,58%); }
+
+    @media(max-width:768px){ .news-grid{grid-template-columns:1fr; gap:1.5rem;} }
+  </style>
+
+  <!-- کتابخانه‌ها -->
+  <script src="https://unpkg.com/htmx.org@1.9.3"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  <!-- JS برای Masonry پس از بارگذاری -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var grid = document.querySelector('.news-grid');
+      var msnry = new Masonry(grid, {
+        itemSelector: '.news-card',
+        columnWidth: '.news-card',
+        percentPosition: true,
+        gutter: 20
+      });
+    });
+  </script>
+
+</section>
