@@ -1,0 +1,107 @@
+<!-- hero.html -->
+<section id="hero" style="position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden; font-family:'Vazirmatn','IBM Plex Sans',sans-serif;">
+
+  <!-- پس‌زمینه گرادینتی جادویی -->
+  <div style="position:absolute; inset:0; background:linear-gradient(135deg, hsl(210,100%,20%), hsl(210,100%,30%)); z-index:0;"></div>
+  
+  <!-- عناصر نور و شناوری جادویی -->
+  <div class="float-element" style="position:absolute; width:300px; height:300px; top:10%; right:5%; background:rgba(230,126,34,0.1); border-radius:50%; filter:blur(120px); z-index:1;"></div>
+  <div class="float-element" style="position:absolute; width:400px; height:400px; bottom:5%; left:5%; background:rgba(27,79,52,0.05); border-radius:50%; filter:blur(150px); z-index:1;"></div>
+
+  <!-- محتوای اصلی -->
+  <div style="position:relative; z-index:2; text-align:center; max-width:700px; padding:0 1rem;">
+    <!-- Badge -->
+    <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; border-radius:999px; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.3); margin-bottom:2rem; animation:fadeIn 1s ease-out forwards;">
+      <span>📦</span>
+      <span style="font-weight:500;">تأمین و واردات B2B</span>
+    </div>
+
+    <!-- عنوان -->
+    <h1 style="font-size:4rem; font-weight:700; line-height:1.2; margin-bottom:1rem; animation:slideUp 1s ease-out forwards; animation-delay:0.2s; background:linear-gradient(135deg, hsl(27,79%,52%), hsl(210,100%,20%)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+      گروه <br><span style="color:hsl(27,79%,52%)">Sahand Apex</span>
+    </h1>
+
+    <!-- توضیح کوتاه -->
+    <p style="font-size:1.25rem; margin-bottom:2rem; line-height:1.5; color:hsl(0,0%,98%); animation:fadeIn 1s ease-out forwards; animation-delay:0.4s;">
+      تأمین‌کننده و واردکننده محصولات <strong>B2B</strong> در حوزه ملزومات اداری و پت‌شاپ
+    </p>
+
+    <!-- دکمه‌ها با hover جادویی -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-bottom:3rem;">
+      <button class="btn-primary" onclick="document.getElementById('office').scrollIntoView({behavior:'smooth'})">
+        🛒 مشاهده محصولات
+      </button>
+      <button class="btn-outline" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
+        درباره ما
+      </button>
+    </div>
+
+    <!-- آمار کوتاه با افکت شیشه‌ای و hover حرفه‌ای -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; max-width:600px; margin:0 auto;">
+      <div class="glass-card">
+        <div style="font-size:2rem; font-weight:700; color:hsl(27,79%,52%);">100+</div>
+        <div>محصولات متنوع</div>
+      </div>
+      <div class="glass-card">
+        <div style="font-size:2rem; font-weight:700; color:hsl(27,79%,52%);">B2B</div>
+        <div>همکاری با کسب‌وکارها</div>
+      </div>
+      <div class="glass-card">
+        <div style="font-size:2rem; font-weight:700; color:hsl(27,79%,52%);">24/7</div>
+        <div>پشتیبانی</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎨 CSS مخصوص Hero -->
+  <style>
+    @keyframes float {
+      0%,100%{ transform:translateY(0px);}
+      50%{ transform:translateY(-15px);}
+    }
+    .float-element { animation:float 6s ease-in-out infinite; }
+
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes slideUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    .fade-in { animation:fadeIn 1s ease-out forwards; }
+    .btn-primary {
+      background:hsl(27,79%,52%); color:hsl(0,0%,98%);
+      padding:0.75rem 1.5rem; border-radius:0.75rem; border:none; cursor:pointer; font-weight:600;
+      transition:0.3s all; box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+    .btn-primary:hover { background:hsl(27,79%,58%); transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+
+    .btn-outline {
+      background:transparent; border:2px solid hsl(0,0%,98%); color:hsl(0,0%,98%);
+      padding:0.75rem 1.5rem; border-radius:0.75rem; cursor:pointer; font-weight:600;
+      transition:0.3s all;
+    }
+    .btn-outline:hover { background:rgba(255,255,255,0.2); transform:translateY(-2px); }
+
+    .glass-card {
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(15px);
+      padding:1.5rem;
+      border-radius:1rem;
+      text-align:center;
+      transition:0.3s all;
+    }
+    .glass-card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+  </style>
+
+  <!-- 🎬 JS مخصوص Hero -->
+  <script>
+    // Float dynamic adjustment
+    const floats = document.querySelectorAll('#hero .float-element');
+    floats.forEach(el=>{
+      let pos=0, dir=1;
+      setInterval(()=>{
+        pos+=dir*0.3;
+        if(pos>20 || pos<0) dir*=-1;
+        el.style.transform=`translateY(${pos}px)`;
+      },30);
+    });
+  </script>
+
+</section>
