@@ -117,11 +117,48 @@
       }
     }
 
-    @media (min-width: 769px) {
-      .menu-toggle {
-        display: none;
-      }
-    }
+/* Box sizing برای همه */
+* {
+  box-sizing: border-box;
+}
+
+/* کاهش padding و margin برای موبایل */
+@media (max-width: 480px) {
+  section {
+    padding: 3rem 1rem; /* کمتر از 6rem */
+  }
+
+  /* عنوان‌ها */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+
+  /* دکمه‌ها */
+  .btn-primary {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* کارت‌ها */
+  .container > div[style*="display:grid"] {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 1rem !important;
+  }
+
+  /* فونت متن‌ها */
+  p { font-size: 0.95rem; line-height: 1.6; }
+
+  /* Nav موبایل */
+  nav {
+    padding: 0.8rem 1rem;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+}
+
 
     /* 🌀 انیمیشن‌های عمومی */
     @keyframes fadeIn {
