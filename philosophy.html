@@ -1,0 +1,122 @@
+<!-- philosophy.html -->
+<section id="philosophy" style="position:relative; min-height:80vh; background:linear-gradient(180deg, hsl(210,100%,20%) 0%, hsl(210,100%,25%) 100%); font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(0,0%,98%); overflow:hidden; padding:6rem 1rem;">
+
+  <!-- پس‌زمینه‌ی دکوری -->
+  <div style="position:absolute; top:-100px; left:-100px; width:400px; height:400px; background:rgba(230,126,34,0.15); border-radius:50%; filter:blur(120px); animation:float 8s ease-in-out infinite;"></div>
+  <div style="position:absolute; bottom:-120px; right:-80px; width:350px; height:350px; background:rgba(230,126,34,0.1); border-radius:50%; filter:blur(100px); animation:float 7s ease-in-out infinite 1s;"></div>
+
+  <div class="container" style="position:relative; z-index:2; max-width:1000px; margin:auto; text-align:center;">
+    
+    <!-- عنوان بخش -->
+    <div class="fadeIn">
+      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem;">فلسفه کاری و ارزش‌ها</h2>
+      <div style="width:100px; height:4px; background:hsl(27,79%,52%); margin:0 auto 2.5rem auto; border-radius:1rem;"></div>
+      <p style="font-size:1.2rem; color:rgba(255,255,255,0.9); line-height:1.8; max-width:700px; margin:auto;">
+        ما باور داریم که کیفیت، صداقت و نوآوری پایه‌های اصلی یک کسب‌وکار پایدار هستند.  
+        در <strong style="color:hsl(27,79%,60%)">Sahand Apex</strong>، تلاش می‌کنیم هر تعامل، تجربه‌ای مثبت و حرفه‌ای برای مشتریان باشد.
+      </p>
+    </div>
+
+    <!-- سه ستون ارزش‌ها -->
+    <div class="values-grid">
+      <div class="value-card fadeIn" style="--delay:0.1s;">
+        <div class="icon">⚙️</div>
+        <h3>کیفیت و دقت</h3>
+        <p>تمرکز بر جزئیات و کنترل کامل بر زنجیره تأمین، تضمین‌کننده کیفیت در هر مرحله است.</p>
+      </div>
+
+      <div class="value-card fadeIn" style="--delay:0.3s;">
+        <div class="icon">🤝</div>
+        <h3>اعتماد و شفافیت</h3>
+        <p>با صداقت در ارتباط و گزارش‌دهی شفاف، همکاری بلندمدت و پایدار می‌سازیم.</p>
+      </div>
+
+      <div class="value-card fadeIn" style="--delay:0.5s;">
+        <div class="icon">🚀</div>
+        <h3>نوآوری و پیشرفت</h3>
+        <p>با بهره‌گیری از تجربه و فناوری، راهکارهای نوین برای تأمین سریع‌تر و بهتر ارائه می‌دهیم.</p>
+      </div>
+    </div>
+
+    <!-- جمله انگیزشی پایانی -->
+    <blockquote style="margin-top:4rem; font-size:1.4rem; font-style:italic; color:hsl(27,79%,70%); line-height:1.8;" class="fadeIn" data-delay="0.8s">
+      "اعتماد، سرمایه‌ی اصلی ماست."
+    </blockquote>
+  </div>
+
+  <!-- 🎨 CSS مخصوص Philosophy -->
+  <style>
+    @keyframes float {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-12px);}
+    }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    .values-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:2rem;
+      margin-top:4rem;
+    }
+
+    .value-card {
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(20px);
+      border-radius:1rem;
+      padding:2rem 1.5rem;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+      transition:0.3s all;
+      opacity:0;
+      transform:translateY(30px);
+    }
+
+    .value-card:hover {
+      transform:translateY(-8px);
+      box-shadow:0 15px 35px rgba(230,126,34,0.4);
+      background:rgba(255,255,255,0.15);
+    }
+
+    .value-card .icon {
+      font-size:2.5rem;
+      color:hsl(27,79%,60%);
+      margin-bottom:1rem;
+      animation:float 6s ease-in-out infinite;
+    }
+
+    .value-card h3 {
+      font-size:1.4rem;
+      font-weight:700;
+      color:hsl(27,79%,70%);
+      margin-bottom:0.5rem;
+    }
+
+    .value-card p {
+      font-size:1rem;
+      color:rgba(255,255,255,0.85);
+      line-height:1.7;
+    }
+
+    @media(max-width:768px){
+      .value-card p{font-size:0.95rem;}
+      .values-grid{gap:1.5rem;}
+    }
+  </style>
+
+  <!-- ⚙️ JS مخصوص Philosophy -->
+  <script>
+    // انیمیشن ظاهر شدن کارت‌ها هنگام اسکرول
+    const values = document.querySelectorAll('#philosophy .value-card, #philosophy blockquote');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.animation = 'fadeIn 1s ease-out forwards';
+          const delay = entry.target.getAttribute('data-delay') || entry.target.style.getPropertyValue('--delay');
+          entry.target.style.animationDelay = delay || '0s';
+        }
+      });
+    },{threshold:0.2});
+    values.forEach(el=>observer.observe(el));
+  </script>
+
+</section>
