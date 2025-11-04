@@ -34,17 +34,19 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
 .nav {
-  position: fixed;
+  position: fixed;       /* همیشه روی صفحه ثابت */
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
-  background: transparent; /* شروع شفاف */
-  transition: all 0.4s ease;
-  padding: 0.6rem 2rem; /* باریک‌تر شد */
-  box-shadow: none;
+  height: 1rem;          /* ارتفاع Navbar */
+  padding: 0 2rem;       /* فاصله از کناره‌ها */
+  display: flex;
+  align-items: center;   /* وسط‌چین عمودی محتوا */
+  background: transparent; 
+  transition: all 0.3s ease;
 }
+
 
 
   .nav-container {
@@ -57,9 +59,7 @@
   }
 
 .nav-logo {
-  font-weight: 700;
-  font-size: 1.4rem;
-  transition: color 0.3s ease;
+  font-size: 1rem; /* یا 1rem */
 }
 
 
@@ -178,6 +178,20 @@
       to { transform: rotate(360deg); }
     }
 
+.nav-bottom-bar {
+  position: fixed;
+  top: 1rem;        /* درست زیر Navbar */
+  left: 0;
+  right: 0;
+  height: 1rem;     /* ارتفاع نوار سفید */
+  background: white;
+  z-index: 999;     /* کمی کمتر از Navbar */
+}
+#hero {
+  margin-top: 2rem;            /* 1rem Navbar + 1rem نوار سفید */
+  min-height: 100vh;           /* ارتفاع کل صفحه */
+  background-color: hsl(210, 100%, 20%); /* رنگ آبی */
+}
 
 
   </style>
@@ -210,6 +224,7 @@
     </div>
   </div>
 </nav>
+<div class="nav-bottom-bar"></div>
 
   <main>
     <div id="hero"></div>
@@ -256,8 +271,7 @@
       setTimeout(()=>loader.remove(), 600);
     });
   </script>
-  
-<script>
+  <script>
 const nav = document.querySelector('.nav');
 const toggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -290,28 +304,28 @@ const colorThemes = {
 
 function setNavTheme(theme){
   nav.style.background = colorThemes[theme].background;
-  nav.style.color = colorThemes[theme].color;
   logo.style.color = colorThemes[theme].color;
   links.forEach(a => a.style.color = colorThemes[theme].color);
 }
 
+// بخش‌ها
 const allSections = document.querySelectorAll('main > div');
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       const id = entry.target.id;
       if(id === 'hero' || id === 'philosophy'){
-        setNavTheme('orange');
+        setNavTheme('orange'); // روی آبی → نارنجی
       } else if(id === 'introduction' || id === 'office' || id === 'petshop' || id === 'bio'){
-        setNavTheme('blue');
+        setNavTheme('blue'); // روی سفید → آبی
       } else {
         setNavTheme('light');
       }
     }
   });
 },{threshold:0.4});
-sections.forEach(sec=>observer.observe(sec));
-</script>
 
+allSections.forEach(sec=>observer.observe(sec));
+</script>
 </body>
 </html>
