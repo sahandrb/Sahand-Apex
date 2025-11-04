@@ -95,10 +95,25 @@
     .story-container { -ms-overflow-style: none; scrollbar-width: none; }
 
     /* Responsive */
-    @media(max-width:768px){
-      .story-container { flex-direction: column; overflow-x: visible; }
-      .story-card { min-width: 100%; margin-bottom: 1.5rem; }
-    }
+@media(max-width:768px){
+  .story-container {
+    flex-wrap: nowrap; /* نگه داشتن افقی */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* smooth swipe */
+    gap: 1.5rem;
+  }
+  .story-card {
+    min-width: 220px; /* کارت کوچکتر برای موبایل */
+    padding: 1.5rem 1rem;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .story-card.active {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+}
+
   </style>
 
   <!-- JS - optional 3D tilt on scroll -->
@@ -115,5 +130,34 @@
       });
     });
   </script>
+  <script>
+    // JS برای فعال کردن کارت در مرکز روی موبایل
+const container = document.querySelector('.story-container');
+const cards = document.querySelectorAll('.story-card');
+
+function updateActiveCard() {
+  const center = container.scrollLeft + container.offsetWidth / 2;
+  let closestCard = null;
+  let closestDist = Infinity;
+
+  cards.forEach(card => {
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    const dist = Math.abs(center - cardCenter);
+    if(dist < closestDist){
+      closestDist = dist;
+      closestCard = card;
+    }
+    card.classList.remove('active');
+  });
+
+  if(closestCard) closestCard.classList.add('active');
+}
+
+// فعال‌سازی هنگام اسکرول
+container.addEventListener('scroll', updateActiveCard);
+window.addEventListener('resize', updateActiveCard);
+updateActiveCard();
+
+    </script>
 
 </section>
