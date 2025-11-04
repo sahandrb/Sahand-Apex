@@ -26,7 +26,7 @@
     <!-- دکمه‌ها -->
     <div class="hero-buttons">
       <button class="btn-primary" onclick="document.getElementById('office').scrollIntoView({behavior:'smooth'})">🛒 مشاهده محصولات</button>
-      <button class="btn-outline" onclick="window.location.href='/news.html'">
+      <button class="btn-outline" onclick="window.location.href='news.html'">
   مقالات 📰
 </button>
 <div class="hero-stats" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:3rem;">
@@ -155,54 +155,70 @@
     .btn-outline:hover { background:rgba(255,255,255,0.2); transform:translateY(-2px); }
 
     /* آمار */
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;       /* فاصله بین کارت‌ها */
+  margin-top: 3rem;
+  flex-wrap: nowrap;  /* همیشه افقی */
+  overflow-x: auto;   /* اگر خیلی کوچک شد، اسکرول افقی */
+  padding-bottom: 1rem; /* فضای پایین برای اسکرول */
+}
+
+.hero-stats::-webkit-scrollbar {
+  height: 6px;
+}
+.hero-stats::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 3px;
+}
+
+.hero-stats .stat-card {
+  flex: 1 1 150px;  /* قابلیت کوچک شدن و بزرگ شدن */
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: hsl(0,0%,98%);
+  transition: 0.3s all;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  min-width: 120px; /* حداقل عرض کارت */
+}
+
+.hero-stats .stat-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.hero-stats .stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-stats .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(27,79%,52%);
+  margin-bottom: 0.3rem;
+}
+
+.hero-stats .stat-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+
+@media(max-width:768px){
   .hero-stats .stat-card {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(20px);
-    border-radius: 1rem;
-    padding: 2rem 2.5rem;
-    text-align: center;
-    color: hsl(0,0%,98%);
-    min-width: 150px;
-    transition: 0.3s all;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 1.5rem 1rem;
+    min-width: 100px;
   }
-
-  .hero-stats .stat-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-  }
-
-  .hero-stats .stat-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero-stats .stat-number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: hsl(27,79%,52%);
-    margin-bottom: 0.3rem;
-  }
-
-  .hero-stats .stat-label {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.85);
-  }
-
-  @media(max-width:768px){
-    .hero-stats {
-      gap:1rem;
-    }
-    .hero-stats .stat-card {
-      padding:1.5rem 1.8rem;
-      min-width:120px;
-    }
-    .hero-stats .stat-number { font-size:1.7rem; }
-    .hero-stats .stat-label { font-size:1rem; }
-    .hero-stats .stat-icon { font-size:2rem; }
-  }
-
+  .hero-stats .stat-number { font-size: 1.7rem; }
+  .hero-stats .stat-label { font-size: 1rem; }
+  .hero-stats .stat-icon { font-size: 2rem; }
+}
     /* ریسپانسیو */
     @media(max-width:768px){
       .hero-title { font-size:2rem; }
