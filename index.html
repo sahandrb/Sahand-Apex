@@ -45,109 +45,105 @@
   align-items: center;   /* وسط‌چین عمودی محتوا */
   background: transparent; 
   transition: all 0.3s ease;
-}
-
-.nav-container {
+}.nav-container {
   display: flex;
-  justify-content: flex-end; /* همه محتوا سمت راست */
+  justify-content: space-between; /* لوگو سمت چپ، لینک‌ها سمت راست */
   align-items: center;
-  gap: 2rem;
+  padding: 0 2rem;
 }
 
 .nav-logo {
   font-weight: 700;
   font-size: 1.5rem;
   color: var(--foreground);
-  text-align: right; /* متن لوگو راست‌چین */
+  text-align: left; /* لوگو سمت چپ */
 }
-
-
 
 .nav-links {
   display: flex;
   gap: 2rem;
   align-items: center;
-  justify-content: flex-end; /* لینک‌ها به سمت راست می‌روند */
-  text-align: right;         /* متن داخل لینک‌ها راست‌چین شود */
-  direction: rtl;            /* جهت متن راست به چپ */
+  justify-content: flex-end; /* لینک‌ها سمت راست */
+  text-align: right;
+  direction: rtl; /* متن لینک‌ها راست‌چین */
+  transition: transform var(--transition);
 }
 
+/* لینک‌ها */
+.nav-links a {
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.2rem 0;
+}
+
+/* Underline animation */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background: var(--foreground);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 51, 102, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: translateX(100%); /* مخفی سمت راست */
+  }
+
+  .nav-links.open {
+    transform: translateX(0); /* وقتی باز شد */
+  }
 
   .nav-links a {
-    color: var(--primary-color);
-    text-decoration:none;
-    font-weight:500;
-    position:relative;
-    padding:0.2rem 0;
-    transition: color var(--transition);
+    font-size: 1.5rem;
   }
-
-  /* Underline animation */
-  .nav-links a::after {
-    content:'';
-    position:absolute;
-    left:0; bottom:-3px;
-    width:0%; height:2px;
-    background: var(--accent);
-    transition: width var(--transition);
-  }
-
-  .nav-links a:hover::after,
-  .nav-links a.active::after {
-    width:100%;
-  }
-
-  .nav-links a:hover { color: var(--accent); }
-
-  /* Hamburger */
-  .menu-toggle {
-    display:none;
-    flex-direction:column;
-    gap:5px;
-    cursor:pointer;
-  }
-  .menu-toggle span {
-    display:block;
-    height:3px;
-    width:25px;
-    background: var(--primary-color);
-    border-radius:2px;
-    transition: all var(--transition);
-  }
-
-    .nav-logo { font-weight: 700; font-size: 1.5rem; color: var(--foreground); }
-
-    /* موبایل */
-    @media (max-width: 768px) {
-      nav { flex-wrap: wrap; }
-      .nav-links {
-        display: none; flex-direction: column; width: 100%; text-align: right;
-      }
-      .nav-links.active {
-        display: flex;
-        background: rgba(255,255,255,0.98);
-        padding: 1rem;
-        border-top: 1px solid #eee;
-      }
-      .menu-toggle { display: block; cursor: pointer; font-size: 1.5rem; }
-    } 
-    .menu-toggle { display:flex; }
-    .nav-links {
-      position:fixed;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,51,102,0.95);
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      gap:2rem;
-      transform:translateX(-100%);
-      transition: transform var(--transition);
-    }
-.nav-links.open { transform:translateX(0); }
-@media (min-width: 769px) { .menu-toggle { display: none; } }
-
-
-    section { min-height: 60vh; padding: 4rem 0; }
+}
 
     /* 🌙 Loader */
     #loader {
