@@ -29,25 +29,27 @@
       <button class="btn-outline" onclick="window.location.href='newsbutton.html'">
   مقالات 📰
 </button>
-
-    </div>
-
-    <!-- آمار کوتاه -->
-    <div class="hero-stats">
-      <div class="glass-card">
-        <div class="stat-number">100+</div>
-        <div>محصولات متنوع</div>
-      </div>
-      <div class="glass-card">
-        <div class="stat-number">B2B</div>
-        <div>همکاری با کسب‌وکارها</div>
-      </div>
-      <div class="glass-card">
-        <div class="stat-number">24/7</div>
-        <div>پشتیبانی</div>
-      </div>
-    </div>
+<div class="hero-stats" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:3rem;">
+  
+  <div class="glass-card stat-card">
+    <div class="stat-icon">📦</div>
+    <div class="stat-number">100+</div>
+    <div class="stat-label">محصولات متنوع</div>
   </div>
+
+  <div class="glass-card stat-card">
+    <div class="stat-icon">🤝</div>
+    <div class="stat-number">B2B</div>
+    <div class="stat-label">همکاری با کسب‌وکارها</div>
+  </div>
+
+  <div class="glass-card stat-card">
+    <div class="stat-icon">⏰</div>
+    <div class="stat-number">24/7</div>
+    <div class="stat-label">پشتیبانی</div>
+  </div>
+
+</div>
 
   <style>
     /* Hero Section */
@@ -153,24 +155,53 @@
     .btn-outline:hover { background:rgba(255,255,255,0.2); transform:translateY(-2px); }
 
     /* آمار */
-    .hero-stats {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-      gap:1rem;
-      max-width:600px;
-      margin:0 auto;
-    }
-    .glass-card {
-      background:rgba(255,255,255,0.1);
-      backdrop-filter:blur(15px);
-      padding:1.5rem;
-      border-radius:1rem;
-      text-align:center;
-      transition:0.3s all;
-    }
-    .glass-card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+  .hero-stats .stat-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    padding: 2rem 2.5rem;
+    text-align: center;
+    color: hsl(0,0%,98%);
+    min-width: 150px;
+    transition: 0.3s all;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
 
-    .stat-number { font-size:2rem; font-weight:700; color:hsl(27,79%,52%); }
+  .hero-stats .stat-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  }
+
+  .hero-stats .stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-stats .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(27,79%,52%);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-stats .stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+
+  @media(max-width:768px){
+    .hero-stats {
+      gap:1rem;
+    }
+    .hero-stats .stat-card {
+      padding:1.5rem 1.8rem;
+      min-width:120px;
+    }
+    .hero-stats .stat-number { font-size:1.7rem; }
+    .hero-stats .stat-label { font-size:1rem; }
+    .hero-stats .stat-icon { font-size:2rem; }
+  }
 
     /* ریسپانسیو */
     @media(max-width:768px){
