@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap برای سایت Sahand Apex
+  فرمت: XML مطابق با Sitemaps.org
+  توضیح: هر <url> یک صفحه یا سکشن سایت است.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- صفحه اصلی /index.html -->
+  <url>
+    <loc>https://sahandapex.ir/</loc>
+    <!-- تاریخ آخرین بروزرسانی صفحه اصلی -->
+    <lastmod>2025-11-04</lastmod>
+    <!-- تغییرات روزانه، گوگل هر روز بررسی کند -->
+    <changefreq>daily</changefreq>
+    <!-- اولویت بالا برای صفحه اصلی -->
+    <priority>1.0</priority>
+  </url>
+
+  <!-- سکشن Hero -->
+  <url>
+    <loc>https://sahandapex.ir/hero</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <!-- Hero: بخش معرفی کوتاه و Badge اولیه سایت -->
+  </url>
+
+  <!-- سکشن Introduction -->
+  <url>
+    <loc>https://sahandapex.ir/introduction</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <!-- Introduction: توضیح کوتاه درباره Sahand Apex و ویژگی‌ها -->
+  </url>
+
+  <!-- سکشن Story -->
+  <url>
+    <loc>https://sahandapex.ir/story</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <!-- Story: روند شکل‌گیری و رشد گروه -->
+  </url>
+
+  <!-- سکشن Office -->
+  <url>
+    <loc>https://sahandapex.ir/office</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <!-- Office: ملزومات اداری و سفارش عمده -->
+  </url>
+
+  <!-- سکشن Petshop -->
+  <url>
+    <loc>https://sahandapex.ir/petshop</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <!-- Petshop: محصولات حیوانات خانگی -->
+  </url>
+
+  <!-- سکشن Philosophy -->
+  <url>
+    <loc>https://sahandapex.ir/philosophy</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <!-- Philosophy: ارزش‌ها و فلسفه کاری گروه -->
+  </url>
+
+  <!-- سکشن Bio -->
+  <url>
+    <loc>https://sahandapex.ir/bio</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <!-- Bio: معرفی شخص بنیان‌گذار و شبکه‌های اجتماعی -->
+  </url>
+
+  <!-- سکشن Footer -->
+  <url>
+    <loc>https://sahandapex.ir/footer</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <!-- Footer: معمولاً نیازی به ایندکس ندارد، فقط برای completeness -->
+  </url>
+
+  <!-- صفحات اخبار و مقالات -->
+  <url>
+    <loc>https://sahandapex.ir/news</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <!-- News: صفحه مقالات و اخبار گروه -->
+  </url>
+
+  <!-- مثال برای یک مقاله خاص -->
+  <url>
+    <loc>https://sahandapex.ir/article1</loc>
+    <lastmod>2025-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <!-- Article1: یک نمونه مقاله -->
+  </url>
+
+  <url>
+    <loc>https://sahandapex.ir/article2</loc>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <!-- Article2: نمونه مقاله دوم -->
+  </url>
+
+</urlset>
