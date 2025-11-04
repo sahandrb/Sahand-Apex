@@ -351,6 +351,16 @@ const observer = new IntersectionObserver((entries)=>{
 },{threshold:0.4});
 
 allSections.forEach(sec=>observer.observe(sec));
+    function setNavTheme(theme){
+  nav.style.background = colorThemes[theme].background;
+  logo.style.color = colorThemes[theme].color;
+  links.forEach(a => a.style.color = colorThemes[theme].color);
+
+  // اضافه کردن این خط برای تغییر رنگ منوی همبرگر
+  const spans = toggle.querySelectorAll('span');
+  spans.forEach(span => span.style.background = colorThemes[theme].color);
+}
+
 </script>
 </body>
 </html>
