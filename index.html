@@ -47,26 +47,31 @@
   transition: all 0.3s ease;
 }
 
-
 .nav-container {
   display: flex;
-  justify-content: center; /* وسط‌چین افقی */
-  align-items: center;     /* وسط‌چین عمودی */
-  gap: 2rem;               /* فاصله بین لوگو و لینک‌ها */
+  justify-content: flex-end; /* همه محتوا سمت راست */
+  align-items: center;
+  gap: 2rem;
 }
-
 
 .nav-logo {
-  font-size: 1.8rem; /* یا 1rem */
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--foreground);
+  text-align: right; /* متن لوگو راست‌چین */
 }
 
 
-  .nav-links {
-    display:flex;
-    gap:2rem;
-    align-items:center;
-    position:relative;
-  }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-end; /* لینک‌ها به سمت راست می‌روند */
+  text-align: right;         /* متن داخل لینک‌ها راست‌چین شود */
+  direction: rtl;            /* جهت متن راست به چپ */
+}
+
 
   .nav-links a {
     color: var(--primary-color);
@@ -177,6 +182,12 @@
     }
 
 
+@media (max-width: 768px) {
+  .nav-links {
+    text-align: right;
+    direction: rtl;
+  }
+}
 
 
   </style>
