@@ -295,7 +295,7 @@ function setNavTheme(theme){
   links.forEach(a => a.style.color = colorThemes[theme].color);
 }
 
-const allSections  = document.querySelectorAll('section');
+const allSections = document.querySelectorAll('main > div');
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
