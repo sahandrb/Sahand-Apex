@@ -33,16 +33,19 @@
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-  .nav {
-    position: fixed;
-    top:0; left:0; right:0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    background: var(--primary-bg);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all var(--transition);
-    padding: 1.1rem 2rem; /* از 1rem به 1.5rem افزایش دادیم */
-  }
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: transparent; /* شروع شفاف */
+  transition: all 0.4s ease;
+  padding: 0.6rem 2rem; /* باریک‌تر شد */
+  box-shadow: none;
+}
+
 
   .nav-container {
     max-width:1200px;
@@ -53,12 +56,12 @@
     
   }
 
-  .nav-logo {
-    font-weight:700;
-    font-size:1.6rem;
-    color: var(--primary-color);
-    transition: transform var(--transition);
-  }
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
 
   .nav-links {
     display:flex;
@@ -137,9 +140,9 @@
       transform:translateX(-100%);
       transition: transform var(--transition);
     }
-    .nav-links.open { transform:translateX(0); }
-  }
-    @media (min-width: 769px) { .menu-toggle { display: none; } }
+.nav-links.open { transform:translateX(0); }
+@media (min-width: 769px) { .menu-toggle { display: none; } }
+
 
     section { min-height: 60vh; padding: 4rem 0; }
 
@@ -174,6 +177,9 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
+
+
+
   </style>
 </head>
 
@@ -218,9 +224,7 @@
 
   <script>
     // منوی موبایل
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+
 
     // بارگذاری هر بخش
     async function loadSection(id, path) {
@@ -254,25 +258,59 @@
   </script>
   
 <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+const nav = document.querySelector('.nav');
+const toggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const logo = document.querySelector('.nav-logo');
+const links = document.querySelectorAll('.nav a');
 
-  toggle.addEventListener('click', ()=>{
-    navLinks.classList.toggle('open');
-    toggle.classList.toggle('open');
-  });
+// منوی موبایل
+toggle.addEventListener('click', ()=>{
+  navLinks.classList.toggle('open');
+  toggle.classList.toggle('open');
+});
 
-  // Scroll shrink effect
-  const nav = document.querySelector('.nav');
-  window.addEventListener('scroll', ()=>{
-    if(window.scrollY > 50){
-      nav.style.padding = '0.5rem 2rem';
-      nav.querySelector('.nav-logo').style.transform='scale(0.9)';
-    } else {
-      nav.style.padding = '1rem 2rem';
-      nav.querySelector('.nav-logo').style.transform='scale(1)';
+// افکت باریک شدن هنگام اسکرول
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 50){
+    nav.style.padding = '0.4rem 2rem';
+    logo.style.transform='scale(0.9)';
+  } else {
+    nav.style.padding = '0.6rem 2rem';
+    logo.style.transform='scale(1)';
+  }
+});
+
+// 🎨 تغییر رنگ بر اساس سکشن فعال
+const colorThemes = {
+  blue: { background: 'rgba(27,79,132,0.9)', color: 'white' },
+  orange: { background: 'rgba(230,126,34,0.9)', color: 'white' },
+  light: { background: 'rgba(255,255,255,0.95)', color: 'hsl(210,100%,20%)' }
+};
+
+function setNavTheme(theme){
+  nav.style.background = colorThemes[theme].background;
+  nav.style.color = colorThemes[theme].color;
+  logo.style.color = colorThemes[theme].color;
+  links.forEach(a => a.style.color = colorThemes[theme].color);
+}
+
+const allSections  = document.querySelectorAll('section');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      if(id === 'hero' || id === 'philosophy'){
+        setNavTheme('orange');
+      } else if(id === 'introduction' || id === 'office' || id === 'petshop' || id === 'bio'){
+        setNavTheme('blue');
+      } else {
+        setNavTheme('light');
+      }
     }
   });
+},{threshold:0.4});
+sections.forEach(sec=>observer.observe(sec));
 </script>
 
 </body>
