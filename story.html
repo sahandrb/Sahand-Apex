@@ -1,128 +1,119 @@
-<!-- story.html - نسخه کاملاً متفاوت و ریسپانسیو -->
-<section id="story" style="position:relative; background:hsl(0,0%,98%); font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:hsl(210,100%,20%); overflow:hidden; padding:6rem 1rem;">
+<!-- story.html - Horizontal Scroll 3D Story -->
+<section id="story" style="position:relative; background:#003366; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; color:#FAFAFA; overflow-x:hidden; padding:4rem 1rem; min-height:80vh;">
 
-  <!-- نورهای پس‌زمینه جادویی -->
-  <div style="position:absolute; top:-80px; left:-60px; width:200px; height:200px; background:rgba(230,126,34,0.07); border-radius:50%; filter:blur(120px); animation:float 12s ease-in-out infinite;"></div>
-  <div style="position:absolute; bottom:-100px; right:-50px; width:250px; height:250px; background:rgba(27,79,52,0.05); border-radius:50%; filter:blur(140px); animation:float 10s ease-in-out infinite 2s;"></div>
-
-  <div class="container" style="position:relative; z-index:2; max-width:1200px; margin:auto;">
-
-    <!-- عنوان بخش -->
-    <div style="text-align:center; margin-bottom:3rem;">
-      <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem;">داستان ما به سبک جدید</h2>
-      <div style="width:80px; height:4px; background:hsl(27,79%,52%); margin:0 auto; border-radius:1rem;"></div>
+  <div class="story-container" style="display:flex; gap:3rem; overflow-x:auto; scroll-behavior:smooth; perspective:1200px; padding-bottom:2rem;">
+    
+    <!-- Card 1 -->
+    <div class="story-card">
+      <div class="icon">
+        <!-- SVG Lightbulb -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#E67E22" viewBox="0 0 24 24"><path d="M12 2a6 6 0 0 0-6 6c0 2.96 2 5.67 4.69 6.48v2.02a1 1 0 0 0 2 0v-2.02C16 13.67 18 10.96 18 8a6 6 0 0 0-6-6z"/></svg>
+      </div>
+      <h3>شروع ایده</h3>
+      <p>شناسایی نیاز بازار و شکل‌گیری ایده اولیه Sahand Apex.</p>
     </div>
 
-    <!-- توضیح کوتاه -->
-    <p class="fadeIn" style="text-align:center; font-size:1.1rem; max-width:700px; margin:auto; margin-bottom:3rem; line-height:1.7;">
-      مسیر ما از یک ایده کوچک آغاز شد و با تمرکز بر نیاز واقعی بازار، به یک تجربه حرفه‌ای و جادویی در تأمین محصولات با کیفیت تبدیل شد.
-    </p>
-
-    <!-- کارت‌های شناور متفاوت -->
-    <div class="story-grid">
-
-      <div class="story-card fadeIn" style="--delay:0.1s;">
-        <div class="story-icon">✨</div>
-        <h3>ایده نوآورانه</h3>
-        <p>شناسایی نیاز واقعی بازار و ایجاد راه‌حل‌های خلاقانه</p>
+    <!-- Card 2 -->
+    <div class="story-card">
+      <div class="icon">
+        <!-- SVG Package -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#E67E22" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-8-4a2 2 0 0 0-2 0l-8 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l8 4a2 2 0 0 0 2 0l8-4A2 2 0 0 0 21 16z"/></svg>
       </div>
+      <h3>اولین محصول</h3>
+      <p>راه‌اندازی اولین خط تولید و ارائه محصول با کیفیت.</p>
+    </div>
 
-      <div class="story-card fadeIn" style="--delay:0.3s;">
-        <div class="story-icon">🌱</div>
-        <h3>رشد پایدار</h3>
-        <p>توسعه محصولات و خدمات با تمرکز بر کیفیت و اعتماد</p>
+    <!-- Card 3 -->
+    <div class="story-card">
+      <div class="icon">
+        <!-- SVG Growth Chart -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#E67E22" viewBox="0 0 24 24"><path d="M3 3v18h18v-2H5V3H3zm15 4v2h-6V7h6zm-3 6v2h-3v-2h3zm6-4v2h-3v-2h3z"/></svg>
       </div>
+      <h3>رشد</h3>
+      <p>گسترش واردات و همکاری با کسب‌وکارهای مختلف.</p>
+    </div>
 
-      <div class="story-card fadeIn" style="--delay:0.5s;">
-        <div class="story-icon">🏅</div>
-        <h3>موفقیت حرفه‌ای</h3>
-        <p>ارائه خدمات قابل اعتماد و تثبیت برند در بازار B2B</p>
+    <!-- Card 4 -->
+    <div class="story-card">
+      <div class="icon">
+        <!-- SVG Trophy -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#E67E22" viewBox="0 0 24 24"><path d="M17 3H7v4h10V3zm2 2v6a4 4 0 0 1-4 4h-1v3H10v-3H9a4 4 0 0 1-4-4V5h14z"/></svg>
       </div>
-
-      <div class="story-card fadeIn" style="--delay:0.7s;">
-        <div class="story-icon">💎</div>
-        <h3>تجربه جادویی</h3>
-        <p>خلق تجربه‌ای حرفه‌ای و جذاب برای مشتریان و فروشگاه‌ها</p>
-      </div>
-
+      <h3>موفقیت</h3>
+      <p>دستیابی به اهداف و کسب اعتماد مشتریان و شرکا.</p>
     </div>
 
   </div>
 
-  <!-- CSS -->
+  <!-- 🌈 CSS -->
   <style>
-    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
-    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-
-    .fadeIn { animation:fadeIn 1s ease-out forwards; opacity:0; }
-
-    .story-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-      gap:2rem;
-      align-items:start;
-    }
-
+    /* Story Cards */
     .story-card {
-      background:linear-gradient(135deg, hsl(27,79%,52%), hsl(27,79%,60%));
-      color:hsl(0,0%,98%);
-      padding:2rem 1.5rem;
-      border-radius:1rem;
-      text-align:center;
-      box-shadow:0 10px 25px rgba(0,0,0,0.1);
-      transition:transform 0.3s ease, box-shadow 0.3s ease;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:flex-start;
+      min-width: 280px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      border-radius: 1rem;
+      padding: 2rem 1.5rem;
+      flex-shrink: 0;
+      transform-style: preserve-3d;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
     }
 
     .story-card:hover {
-      transform:translateY(-8px) scale(1.03);
-      box-shadow:0 15px 35px rgba(230,126,34,0.25);
-      background:linear-gradient(135deg, hsl(27,79%,58%), hsl(27,79%,65%));
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
     }
 
-    .story-icon {
-      font-size:2.5rem;
-      width:70px;
-      height:70px;
-      background:linear-gradient(135deg, hsl(210,100%,20%), hsl(27,79%,52%));
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:1rem;
-      box-shadow:0 0 20px rgba(230,126,34,0.3);
-      animation:float 5s ease-in-out infinite;
+    .story-card .icon {
+      margin-bottom: 1rem;
+      animation: float 6s ease-in-out infinite;
     }
 
-    .story-card h3 { font-size:1.2rem; margin-bottom:0.5rem; font-weight:700; }
-    .story-card p { font-size:0.95rem; line-height:1.6; }
+    .story-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #FAFAFA;
+    }
 
-    /* ریسپانسیو */
+    .story-card p {
+      font-size: 1rem;
+      color: #EDEDED;
+      line-height: 1.6;
+    }
+
+    /* Float animation */
+    @keyframes float {
+      0%,100%{ transform: translateY(0px); }
+      50%{ transform: translateY(-8px); }
+    }
+
+    /* Scrollbar hidden */
+    .story-container::-webkit-scrollbar { display: none; }
+    .story-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Responsive */
     @media(max-width:768px){
-      .story-grid { grid-template-columns:1fr; gap:1.5rem; }
-      .story-card { padding:1.5rem 1rem; text-align:right; }
-      .story-icon { width:60px; height:60px; font-size:2rem; }
-      .story-card h3 { font-size:1.1rem; }
-      .story-card p { font-size:0.9rem; }
+      .story-container { flex-direction: column; overflow-x: visible; }
+      .story-card { min-width: 100%; margin-bottom: 1.5rem; }
     }
   </style>
 
-  <!-- JS -->
+  <!-- JS - optional 3D tilt on scroll -->
   <script>
-    const storyCards = document.querySelectorAll('#story .story-card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.style.opacity='1';
-          entry.target.style.transform='translateY(0)';
-          entry.target.style.transitionDelay = entry.target.style.getPropertyValue('--delay');
-        }
+    const container = document.querySelector('.story-container');
+    const cards = document.querySelectorAll('.story-card');
+
+    container.addEventListener('scroll', () => {
+      const center = container.scrollLeft + container.offsetWidth / 2;
+      cards.forEach(card => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const offset = (center - cardCenter) / 100; // adjust for effect
+        card.style.transform = `translateY(${-10 + offset*5}px) scale(${1 + Math.max(-0.05, Math.min(0.05, offset))})`;
       });
-    }, {threshold:0.3});
-    storyCards.forEach(card => observer.observe(card));
+    });
   </script>
 
 </section>
