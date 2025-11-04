@@ -350,7 +350,7 @@ const observer = new IntersectionObserver((entries)=>{
     if(entry.isIntersecting){
       const id = entry.target.id;
       if(id === 'hero' || id === 'philosophy'){
-        setNavTheme('orange'); // روی آبی → نارنجی
+        setNavTheme('light'); // روی آبی → نارنجی
       } else if(id === 'introduction' || id === 'office' || id === 'petshop' || id === 'bio'){
         setNavTheme('blue'); // روی سفید → آبی
       } else {
