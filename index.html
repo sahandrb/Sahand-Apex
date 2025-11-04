@@ -79,16 +79,10 @@
 }
 
 /* Underline animation */
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 2px;
-  background: var(--accent);
-  transition: width var(--transition);
+.nav-links {
+  display: none !important;
 }
+
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
