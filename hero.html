@@ -224,6 +224,20 @@
       .btn-primary, .btn-outline { width:100%; }
       .hero-stats { grid-template-columns:1fr; gap:0.75rem; }
     }
+    html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start; /* محتوا از بالا شروع شود */
+  justify-content: center;
+  padding-top: 0; /* حذف فاصله بالایی */
+}
+
   </style>
 
   <script>
