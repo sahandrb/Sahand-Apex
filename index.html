@@ -39,8 +39,8 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 3rem;          /* ارتفاع Navbar */
-  padding: 0 2rem;       /* فاصله از کناره‌ها */
+  height: 3rem;
+  padding: 0.4rem 2rem;      /* فاصله از کناره‌ها */
   display: flex;
   align-items: center;   /* وسط‌چین عمودی محتوا */
   background: transparent; 
@@ -56,7 +56,8 @@
   font-weight: 700;
   font-size: 1.5rem;
   color: var(--foreground);
-  text-align: left; /* لوگو سمت چپ */
+  text-align: right; /* لوگو سمت چپ */
+  transform: scale(0.9);
 }
 
 .nav-links {
@@ -67,6 +68,7 @@
   text-align: right;
   direction: rtl; /* متن لینک‌ها راست‌چین */
   transition: transform var(--transition);
+  
 }
 
 /* لینک‌ها */
@@ -270,16 +272,7 @@ toggle.addEventListener('click', ()=>{
   toggle.classList.toggle('open');
 });
 
-// افکت باریک شدن هنگام اسکرول
-window.addEventListener('scroll', ()=>{
-  if(window.scrollY > 50){
-    nav.style.padding = '0.4rem 2rem';
-    logo.style.transform='scale(0.9)';
-  } else {
-    nav.style.padding = '0.4rem 2rem';
-    logo.style.transform='scale(0.9)';
-  }
-});
+
 
 // 🎨 تغییر رنگ بر اساس سکشن فعال
 const colorThemes = {
