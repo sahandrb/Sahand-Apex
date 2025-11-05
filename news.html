@@ -1,35 +1,21 @@
-<!-- news.html - نسخه حرفه‌ای و پایدار -->
-<section id="news" class="news-section">
-  <div class="float-bg float-bg-orange"></div>
-  <div class="float-bg float-bg-green"></div>
-
+<!-- article-card-template.html - قالب کامل مقالات -->
+<section class="articles-section">
   <div class="container">
-    <!-- عنوان بخش -->
-    <div class="section-header fadeIn">
-      <h2>اخبار و مقالات</h2>
-      <div class="divider"></div>
-      <p>جدیدترین مقالات و اخبار گروه <strong>Sahand Apex</strong></p>
-    </div>
-
-    <!-- Grid کارت‌ها -->
-    <div class="news-grid" id="news-grid">
-      <!-- کارت نمونه اولیه -->
-      <div class="news-card fadeIn">
-        <img src="https://via.placeholder.com/400x250" alt="عنوان مقاله ۱">
-        <div class="news-content">
-          <h3>عنوان مقاله شماره ۱</h3>
-          <p class="news-date">03 نوامبر 2025</p>
-          <p class="news-summary">خلاصه کوتاه مقاله برای توضیح سریع درباره موضوع مقاله...</p>
-          <a href="article1.html" class="read-more">ادامه مطلب →</a>
-        </div>
-      </div>
-      <div class="news-card fadeIn">
-        <img src="https://via.placeholder.com/400x250" alt="عنوان مقاله ۲">
-        <div class="news-content">
-          <h3>عنوان مقاله شماره ۲</h3>
-          <p class="news-date">02 نوامبر 2025</p>
-          <p class="news-summary">خلاصه کوتاه مقاله دوم برای جذابیت بیشتر...</p>
-          <a href="article2.html" class="read-more">ادامه مطلب →</a>
+    <!-- Grid مقالات -->
+    <div class="articles-grid" id="articles-grid">
+      <!-- نمونه کارت -->
+      <div class="article-card fadeIn">
+        <!-- تصویر مقاله -->
+        <img src="IMAGE_URL" alt="TITLE">
+        <div class="article-content">
+          <!-- تیتر مقاله -->
+          <h3>TITLE</h3>
+          <!-- تاریخ مقاله -->
+          <p class="article-date">DATE</p>
+          <!-- خلاصه مقاله -->
+          <p class="article-summary">SUMMARY_TEXT</p>
+          <!-- لینک ادامه مطلب -->
+          <a href="ARTICLE_LINK" class="read-more">ادامه مطلب →</a>
         </div>
       </div>
     </div>
@@ -40,56 +26,50 @@
     </div>
   </div>
 
-  <!-- CSS -->
+  <!-- CSS قالب -->
   <style>
-    .news-section {
-      position: relative;
+    .articles-section {
       background: hsl(0,0%,96%);
-      padding: 6rem 1rem;
-      color: hsl(210,100%,20%);
+      padding: 4rem 1rem;
       font-family:'Vazirmatn','IBM Plex Sans',sans-serif;
-      overflow: hidden;
+      color: hsl(210,100%,20%);
     }
-    .container { max-width: 1200px; margin: auto; position: relative; z-index: 2; }
+    .container { max-width:1200px; margin:auto; }
+    .articles-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
 
-    .float-bg { position: absolute; border-radius:50%; filter:blur(120px); animation:float 8s ease-in-out infinite; }
-    .float-bg-orange { top:-80px; left:-60px; width:250px; height:250px; background: rgba(230,126,34,0.08); }
-    .float-bg-green { bottom:-100px; right:-50px; width:300px; height:300px; background: rgba(27,79,52,0.06); animation-delay:1s; }
-
-    @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
-
-    .section-header { text-align:center; margin-bottom:4rem; }
-    .section-header h2 { font-size:2.8rem; font-weight:700; margin-bottom:1rem; background: linear-gradient(90deg, hsl(27,79%,52%), hsl(210,100%,20%)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
-    .divider { width:100px; height:4px; background:hsl(27,79%,52%); margin:0 auto 1.5rem auto; border-radius:1rem; }
-    .section-header p { font-size:1.1rem; color:hsl(210,30%,40%); max-width:700px; margin:auto; }
-
-    .news-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
-    @media(max-width:768px){ .news-grid { grid-template-columns:1fr; gap:1.5rem; } }
-
-    .news-card {
+    .article-card {
       background: rgba(255,255,255,0.85);
       backdrop-filter: blur(20px);
-      border-radius:1rem;
+      border-radius: 1rem;
       overflow:hidden;
-      box-shadow:0 15px 30px rgba(0,0,0,0.1);
-      transition: transform 0.4s, box-shadow 0.4s;
-      cursor:pointer;
       display:flex;
       flex-direction: column;
-      opacity: 1; /* کارت‌های اولیه همیشه دیده شوند */
+      box-shadow:0 15px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+      opacity: 0;
     }
-    .news-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-    .news-card img { width:100%; height:180px; object-fit:cover; transition: transform 0.5s; }
-    .news-card:hover img { transform: scale(1.05); }
+    .article-card.fadeIn { animation: fadeIn 0.8s ease-out forwards; }
 
-    .news-content { padding:1.5rem; flex:1; display:flex; flex-direction:column; justify-content:space-between; }
-    .news-content h3 { font-size:1.5rem; font-weight:700; margin-bottom:0.5rem; color:hsl(210,100%,20%); }
-    .news-date { font-size:0.9rem; color:hsl(210,30%,40%); margin-bottom:0.75rem; }
-    .news-summary { font-size:1rem; line-height:1.6; margin-bottom:1rem; flex-grow:1; }
-    .read-more { font-weight:600; color:hsl(27,79%,52%); text-decoration:none; align-self:flex-start; transition: color 0.3s; }
+    .article-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow:0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .article-card img {
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      transition: transform 0.5s;
+    }
+    .article-card:hover img { transform: scale(1.05); }
+
+    .article-content { padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between; flex:1; }
+    .article-content h3 { font-size:1.5rem; font-weight:700; margin-bottom:0.5rem; color:hsl(210,100%,20%); }
+    .article-date { font-size:0.9rem; color:hsl(210,30%,40%); margin-bottom:0.75rem; }
+    .article-summary { font-size:1rem; line-height:1.6; margin-bottom:1rem; flex-grow:1; }
+    .read-more { font-weight:600; color:hsl(27,79%,52%); text-decoration:none; transition: color 0.3s; }
     .read-more:hover { color:hsl(27,79%,58%); text-decoration:underline; }
 
-    .load-more-container { text-align:center; margin-top:3rem; }
     .btn-primary {
       background:hsl(27,79%,52%);
       color:hsl(0,0%,98%);
@@ -100,58 +80,59 @@
       cursor:pointer;
       font-size:1.1rem;
       transition: all 0.4s ease;
+      margin-top:2rem;
     }
     .btn-primary:hover { background:hsl(27,79%,58%); transform:translateY(-3px) scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
 
-    .fadeIn { opacity:0; animation:fadeIn 0.8s ease-out forwards; }
     @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+    @media(max-width:768px){
+      .article-card img { height:160px; }
+      .article-content h3 { font-size:1.3rem; }
+      .article-summary { font-size:0.95rem; }
+    }
   </style>
 
-  <!-- کتابخانه‌ها -->
+  <!-- JS قالب -->
   <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
-  <!-- JS حرفه‌ای Load More -->
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      const grid = document.getElementById('news-grid');
+      const grid = document.getElementById('articles-grid');
 
-      // ساخت Masonry فقط یکبار
+      // ساخت Masonry فقط یک بار
       const masonry = new Masonry(grid, {
-        itemSelector: '.news-card',
-        columnWidth: '.news-card',
+        itemSelector: '.article-card',
+        columnWidth: '.article-card',
         percentPosition: true,
         gutter: 20
       });
 
-      // اطمینان از بارگذاری تصاویر قبل از layout
-      imagesLoaded(grid, function() {
-        masonry.layout();
-      });
+      // نمایش کارت‌های اولیه بعد از لود تصاویر
+      imagesLoaded(grid, function() { masonry.layout(); });
 
       // Load More
       const loadBtn = document.getElementById('load-more');
       loadBtn.addEventListener('click', async () => {
         try {
-          const res = await fetch('articles.json');
+          const res = await fetch('articles.json'); // JSON مقالات
           const articles = await res.json();
 
           const newCards = articles.map(article => {
             const card = document.createElement('div');
-            card.className = 'news-card fadeIn';
+            card.className = 'article-card fadeIn';
             card.innerHTML = `
               <img src="${article.img}" alt="${article.title}">
-              <div class="news-content">
+              <div class="article-content">
                 <h3>${article.title}</h3>
-                <p class="news-date">${article.date}</p>
-                <p class="news-summary">${article.summary}</p>
+                <p class="article-date">${article.date}</p>
+                <p class="article-summary">${article.summary}</p>
                 <a href="${article.link}" class="read-more">ادامه مطلب →</a>
               </div>`;
             grid.appendChild(card);
             return card;
           });
 
-          // منتظر بارگذاری تصاویر جدید
           imagesLoaded(grid, function() {
             masonry.appended(newCards);
             masonry.layout();
