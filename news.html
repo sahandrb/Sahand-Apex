@@ -1,4 +1,4 @@
-<!-- news.html -->
+<!-- news.html - نسخه حرفه‌ای و جذاب -->
 <section id="news" class="news-section">
   <!-- پس‌زمینه Float تزئینی -->
   <div class="float-bg float-bg-orange"></div>
@@ -9,14 +9,14 @@
     <div class="section-header fadeIn">
       <h2>اخبار و مقالات</h2>
       <div class="divider"></div>
-      <p>جدیدترین مقالات و خبرهای گروه <strong>Sahand Apex</strong></p>
+      <p>جدیدترین مقالات و اخبار گروه <strong>Sahand Apex</strong></p>
     </div>
 
-    <!-- کارت‌ها -->
-    <div class="news-grid" id="news-grid" hx-get="articles.json" hx-trigger="load" hx-swap="afterend">
-      <!-- کارت نمونه -->
+    <!-- Grid کارت‌ها -->
+    <div class="news-grid" id="news-grid">
+      <!-- کارت نمونه ۱ -->
       <div class="news-card fadeIn">
-        <img src="https://via.placeholder.com/400x250" alt="عنوان مقاله">
+        <img src="https://via.placeholder.com/400x250" alt="عنوان مقاله ۱">
         <div class="news-content">
           <h3>عنوان مقاله شماره ۱</h3>
           <p class="news-date">03 نوامبر 2025</p>
@@ -26,7 +26,7 @@
       </div>
       <!-- کارت نمونه ۲ -->
       <div class="news-card fadeIn">
-        <img src="https://via.placeholder.com/400x250" alt="عنوان مقاله">
+        <img src="https://via.placeholder.com/400x250" alt="عنوان مقاله ۲">
         <div class="news-content">
           <h3>عنوان مقاله شماره ۲</h3>
           <p class="news-date">02 نوامبر 2025</p>
@@ -37,71 +37,103 @@
     </div>
 
     <!-- دکمه Load More -->
-    <div class="load-more-container">
+    <div class="load-more-container fadeIn">
       <button id="load-more" class="btn-primary">مقالات بیشتر</button>
     </div>
   </div>
 
   <!-- CSS -->
   <style>
-    /* پایه */
-    body, html { margin:0; padding:0; font-family:'Vazirmatn','IBM Plex Sans',sans-serif; }
-    .news-section { position:relative; background:hsl(0,0%,96%); padding:6rem 1rem; color:hsl(210,100%,20%); overflow:hidden; }
-    .container { max-width:1200px; margin:auto; position:relative; z-index:2; }
+    .news-section {
+      position: relative;
+      background: hsl(0,0%,96%);
+      padding: 6rem 1rem;
+      color: hsl(210,100%,20%);
+      overflow: hidden;
+      font-family:'Vazirmatn','IBM Plex Sans',sans-serif;
+    }
+    .container { max-width: 1200px; margin: auto; position: relative; z-index: 2; }
 
     /* Float پس‌زمینه */
-    .float-bg { position:absolute; border-radius:50%; filter:blur(120px); animation:float 7s ease-in-out infinite; }
-    .float-bg-orange { top:-80px; left:-60px; width:250px; height:250px; background:rgba(230,126,34,0.08); }
-    .float-bg-green { bottom:-100px; right:-50px; width:300px; height:300px; background:rgba(27,79,52,0.06); animation-delay:1s; }
+    .float-bg { position: absolute; border-radius:50%; filter:blur(120px); animation:float 8s ease-in-out infinite; }
+    .float-bg-orange { top:-80px; left:-60px; width:250px; height:250px; background: rgba(230,126,34,0.08); }
+    .float-bg-green { bottom:-100px; right:-50px; width:300px; height:300px; background: rgba(27,79,52,0.06); animation-delay:1s; }
 
-    @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+    @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
 
     /* عنوان بخش */
     .section-header { text-align:center; margin-bottom:4rem; }
-    .section-header h2 { font-size:2.5rem; font-weight:700; margin-bottom:1rem; }
+    .section-header h2 { font-size:2.8rem; font-weight:700; margin-bottom:1rem; background: linear-gradient(90deg, hsl(27,79%,52%), hsl(210,100%,20%)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
     .divider { width:100px; height:4px; background:hsl(27,79%,52%); margin:0 auto 1.5rem auto; border-radius:1rem; }
     .section-header p { font-size:1.1rem; color:hsl(210,30%,40%); max-width:700px; margin:auto; }
 
     /* Grid کارت‌ها */
-    .news-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
+    .news-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
     @media(max-width:768px){ .news-grid { grid-template-columns:1fr; gap:1.5rem; } }
 
     /* کارت‌ها */
-    .news-card { background:rgba(255,255,255,0.8); backdrop-filter:blur(15px); border-radius:1rem; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition:0.3s all; }
-    .news-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(0,0,0,0.15); }
-    .news-card img { width:100%; display:block; }
-    .news-content { padding:1.5rem; }
-    .news-content h3 { font-size:1.4rem; font-weight:700; margin-bottom:0.5rem; }
-    .news-date { font-size:0.9rem; color:hsl(210,30%,40%); margin-bottom:1rem; }
-    .news-summary { font-size:1rem; line-height:1.6; margin-bottom:1rem; }
-    .read-more { font-weight:600; color:hsl(27,79%,52%); text-decoration:none; }
-    .read-more:hover { color:hsl(27,79%,58%); }
+    .news-card {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px);
+      border-radius:1rem;
+      overflow:hidden;
+      box-shadow:0 15px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor:pointer;
+      display:flex;
+      flex-direction: column;
+      height:100%;
+    }
+    .news-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    .news-card img { width:100%; height:180px; object-fit:cover; transition: transform 0.5s; }
+    .news-card:hover img { transform: scale(1.05); }
+
+    .news-content { padding:1.5rem; flex:1; display:flex; flex-direction:column; justify-content:space-between; }
+    .news-content h3 { font-size:1.5rem; font-weight:700; margin-bottom:0.5rem; color:hsl(210,100%,20%); }
+    .news-date { font-size:0.9rem; color:hsl(210,30%,40%); margin-bottom:0.75rem; }
+    .news-summary { font-size:1rem; line-height:1.6; margin-bottom:1rem; flex-grow:1; }
+    .read-more { font-weight:600; color:hsl(27,79%,52%); text-decoration:none; align-self:flex-start; transition: color 0.3s; }
+    .read-more:hover { color:hsl(27,79%,58%); text-decoration:underline; }
 
     /* دکمه Load More */
-    .load-more-container { text-align:center; margin-top:2rem; }
-    .btn-primary { background:hsl(27,79%,52%); color:hsl(0,0%,98%); padding:0.75rem 1.5rem; border-radius:0.75rem; border:none; font-weight:600; cursor:pointer; transition:0.3s all; }
-    .btn-primary:hover { background:hsl(27,79%,58%); transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+    .load-more-container { text-align:center; margin-top:3rem; }
+    .btn-primary {
+      background:hsl(27,79%,52%);
+      color:hsl(0,0%,98%);
+      padding:0.75rem 2rem;
+      border-radius:0.75rem;
+      border:none;
+      font-weight:700;
+      cursor:pointer;
+      font-size:1.1rem;
+      transition: all 0.4s ease;
+    }
+    .btn-primary:hover { background:hsl(27,79%,58%); transform:translateY(-3px) scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
 
-    /* FadeIn */
+    /* FadeIn Animation */
     .fadeIn { opacity:0; animation:fadeIn 1s ease-out forwards; }
-    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
   </style>
 
   <!-- کتابخانه‌ها -->
-  <script src="https://unpkg.com/htmx.org@1.9.3"></script>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
-  <!-- JS حرفه‌ای -->
+  <!-- JS حرفه‌ای Load More -->
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const grid = document.getElementById('news-grid');
+      const masonry = new Masonry(grid, {
+        itemSelector: '.news-card',
+        columnWidth: '.news-card',
+        percentPosition: true,
+        gutter: 20
+      });
 
-
-      // Load More نمونه
       document.getElementById('load-more').addEventListener('click', async ()=>{
         try {
           const res = await fetch('articles.json');
           const articles = await res.json();
+          const newCards = [];
           articles.forEach(article=>{
             const card = document.createElement('div');
             card.className = 'news-card fadeIn';
@@ -114,17 +146,11 @@
                 <a href="${article.link}" class="read-more">ادامه مطلب →</a>
               </div>`;
             grid.appendChild(card);
+            newCards.push(card);
           });
-          // Re-layout Masonry
-          new Masonry(grid, {
-            itemSelector: '.news-card',
-            columnWidth: '.news-card',
-            percentPosition: true,
-            gutter: 20
-          });
+          masonry.appended(newCards);
         } catch(err){ console.error(err); }
       });
     });
   </script>
-
 </section>
