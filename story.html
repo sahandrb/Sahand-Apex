@@ -87,6 +87,14 @@
       color: #EDEDED;
       line-height: 1.6;
     }
+@media(min-width:769px){
+  .story-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    overflow-x: visible; /* دیگه اسکرول افقی نداره */
+  }
+}
 
     @keyframes float {
       0%,100%{ transform: translateY(0px); }
