@@ -95,14 +95,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const grid = document.getElementById('news-grid');
-      if(grid) {
-        new Masonry(grid, {
-          itemSelector: '.news-card',
-          columnWidth: '.news-card',
-          percentPosition: true,
-          gutter: 20
-        });
-      }
+
 
       // Load More نمونه
       document.getElementById('load-more').addEventListener('click', async ()=>{
