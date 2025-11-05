@@ -252,6 +252,46 @@
     background: hsl(27,79%,52%) !important;
   }
 }
+/* 🔹 فواصل عمودی منطقی بین بخش‌های اصلی */
+.hero-title {
+  margin-bottom: 1.5rem; /* فاصله بین عنوان و زیرنویس */
+}
+
+.hero-subtitle {
+  margin-bottom: 2.5rem; /* فاصله بین زیرنویس و دکمه‌ها */
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
+}
+
+.hero-buttons {
+  margin-bottom: 3rem; /* فاصله بین دکمه‌ها و بخش آمار */
+}
+
+.hero-stats {
+  margin-top: 2rem; /* فاصله متعادل از بالا */
+}
+
+/* 🔹 برای موبایل */
+@media (max-width: 768px) {
+  .hero-title {
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 1.8rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    margin-bottom: 2rem;
+  }
+
+  .hero-stats {
+    margin-top: 1.5rem;
+  }
+}
 
   </style>
 
