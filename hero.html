@@ -236,6 +236,22 @@
       .btn-primary, .btn-outline { width:100%; }
       .hero-stats { grid-template-columns:1fr; gap:0.75rem; }
     }
+/* 📴 غیرفعال کردن تمام انیمیشن‌ها و افکت‌ها در موبایل */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .btn-primary:hover,
+  .btn-outline:hover,
+  .hero-stats .stat-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: hsl(27,79%,52%) !important;
+  }
+}
 
   </style>
 
