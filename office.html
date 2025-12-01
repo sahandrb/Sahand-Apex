@@ -46,9 +46,32 @@
         </div>
 
         <!-- CTA Button -->
-        <button class="btn-primary" onclick="window.open('https://example.com/office-supplies','_blank')">
-          اطلاعات و سفارش
-        </button>
+<!-- Collaboration Section -->
+<div class="collab-section fadeIn">
+  
+  <h3 class="collab-title">شرکت‌های همکاری‌کننده</h3>
+
+  <p class="collab-text">
+    مجموعه‌ای از کسب‌وکارهایی که با ما همکاری داشته‌اند  
+    و در مسیر رشد و توسعه از خدمات ما بهره‌مند شده‌اند:
+  </p>
+
+  <!-- لیست شرکت‌ها -->
+  <ul class="collab-list">
+    <li class="collab-item">همکاری با برندهای نوپا و در حال رشد</li>
+    <li class="collab-item">تأمین و پشتیبانی برای مجموعه‌های بزرگ</li>
+    <li class="collab-item">ارائه خدمات تخصصی به کسب‌وکارهای مختلف</li>
+  </ul>
+
+  <!-- دکمه با متن جدید -->
+  <button class="collab-btn" onclick="window.open('https://www.unitytape.ir','_blank')">
+    تأمین‌کننده چسب
+  </button>
+
+  <p class="collab-link">www.unitytape.ir</p>
+
+</div>
+
       </div>
 
     </div>
@@ -100,6 +123,99 @@
     @media(max-width:768px){
       .feature { justify-content:flex-start; }
     }
+
+
+    /* Collaboration Section Styles */
+.collab-section {
+  text-align: center;
+  margin-top: 4rem;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.collab-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: hsl(210,100%,20%);
+}
+
+.collab-text {
+  font-size: 1.1rem;
+  color: hsl(210,30%,40%);
+  margin-bottom: 1.5rem;
+}
+
+/* List */
+.collab-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2rem auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* List Item */
+.collab-item {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  color: hsl(210,40%,30%);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.collab-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Button */
+.collab-btn {
+  background: hsl(27,79%,52%);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.collab-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+  background: hsl(27,79%,58%);
+}
+
+/* Website Text */
+.collab-link {
+  margin-top: 1.5rem;
+  color: hsl(210,30%,40%);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.collab-link strong {
+  color: hsl(27,79%,52%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .collab-title {
+    font-size: 1.6rem;
+  }
+  .collab-btn {
+    width: 100%;
+  }
+}
+
   </style>
 
   <!-- JS مخصوص Office -->
